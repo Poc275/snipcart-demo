@@ -45,6 +45,41 @@ const MainHomePage = () => (
             </Slider>
         </section>
         {/*Home Section End*/}
+
+        {/*collection banner*/}
+        <section className="pb-0">
+            <div className="container">
+                <div className="row partition2">
+                    <div className="col-md-6">
+                        <Link to={`${process.env.BASE_URL}/left-sidebar/collection`}>
+                            <div className="collection-banner p-right text-center">
+                                <img src={`${process.env.BASE_URL}/assets/images/sub-banner.jpg`} className="img-fluid" alt=""/>
+                                    <div className="contain-banner">
+                                        <div>
+                                            <h4>shop</h4>
+                                            <h2>clothing</h2>
+                                        </div>
+                                    </div>
+                            </div>
+                        </Link>
+                    </div>
+                    <div className="col-md-6">
+                        <Link to={`${process.env.BASE_URL}/left-sidebar/collection`}>
+                            <div className="collection-banner p-right text-center">
+                                <img src={`${process.env.BASE_URL}/assets/images/sub-banner.jpg`} className="img-fluid" alt=""/>
+                                    <div className="contain-banner">
+                                        <div>
+                                            <h4>shop</h4>
+                                            <h2>accessories</h2>
+                                        </div>
+                                    </div>
+                            </div>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {/*collection banner end*/}
     </div>
 )
 
