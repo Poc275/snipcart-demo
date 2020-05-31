@@ -27,11 +27,11 @@ const IndexPage = ({ data }) => (
 
     <MainHomePage />
 
-    {
+    {/* {
       data.allStrapiProduct.edges.map(product => (
         <Product key={product.node.id} data={product.node} />
       ))
-    }
+    } */}
   </Layout>
 )
 
