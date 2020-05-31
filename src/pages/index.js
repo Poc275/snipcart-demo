@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import Product from "../components/products/product"
 
 import './index.scss'
+import MainHomePage from "../components/main-home-page"
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -23,6 +24,8 @@ const IndexPage = ({ data }) => (
     <button className="snipcart-checkout">Go to Checkout</button> */}
 
     {/* <hr /> */}
+
+    <MainHomePage />
 
     {
       data.allStrapiProduct.edges.map(product => (

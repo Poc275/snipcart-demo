@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
-import Navbar from "./headers/navbar"
-import Logo from "./headers/logo"
-import CartHeader from "./headers/cart-header"
+import Navbar from "./navbar"
+import Logo from "./logo"
+import CartHeader from "./cart-header"
 
 class Header extends Component {
   constructor(props) {
