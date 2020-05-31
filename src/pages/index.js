@@ -18,11 +18,11 @@ const IndexPage = ({ data }) => (
     </div>
     <Link to="/page-2/">Go to page 2</Link> */}
 
-    <p>Items in basket: <span className="snipcart-items-count"></span></p>
+    {/* <p>Items in basket: <span className="snipcart-items-count"></span></p>
     <p>Basked total: <span className="snipcart-total-price"></span></p>
-    <button className="snipcart-checkout">Go to Checkout</button>
+    <button className="snipcart-checkout">Go to Checkout</button> */}
 
-    <hr />
+    {/* <hr /> */}
 
     {
       data.allStrapiProduct.edges.map(product => (
