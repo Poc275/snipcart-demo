@@ -5,6 +5,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Product from "../components/products/product"
 
+import './index.scss'
+
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
