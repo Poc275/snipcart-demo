@@ -1,7 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
-import Slider from 'react-slick';
+import Slider from 'react-slick'
 import { useStaticQuery, graphql } from "gatsby"
+import TopCollection from "./top-collection";
 
 const MainHomePage = () => (
     <div>
@@ -80,6 +81,8 @@ const MainHomePage = () => (
             </div>
         </section>
         {/*collection banner end*/}
+
+        <TopCollection />
     </div>
 )
 
