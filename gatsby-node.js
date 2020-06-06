@@ -5,3 +5,69 @@
  */
 
 // You can delete this file if you're not using it
+const path = require('path')
+
+// create a new page for each product
+exports.createPages = ({graphql, actions}) => {
+    const { createPage } = actions
+
+    // createPages requires a promise
+    return new Promise(resolve => {
+        graphql(`
+            {
+                allStrapiProduct(filter: {shops: {elemMatch: {title: {eq: "demo_shop_one"}}}}) {
+                    edges {
+                        node {
+                            id
+                            weight
+                            variable
+                            title
+                            summary
+                            sku
+                            price
+                            description
+                            image {
+                                childImageSharp {
+                                    fixed {
+                                        src
+                                    }
+                                }
+                            }
+                            variations {
+                                name
+                                options {
+                                    description
+                                    value
+                                }
+                            }
+                            category
+                            dimensions
+                            tags
+                            product_gallery {
+                                image {
+                                    childImageSharp {
+                                        fixed {
+                                            src
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        `).then(result => {
+            console.log(result)
+            result.data.allStrapiProduct.edges.forEach(({node}) => {
+                createPage({
+                    path: `/product/${node.id}`,
+                    component: path.resolve('./src/pages/product.js'),
+                    context: {
+                        product: node
+                    },
+                })
+            })
+            resolve()
+        })
+    })
+}

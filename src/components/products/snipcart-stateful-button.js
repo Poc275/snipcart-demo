@@ -25,7 +25,7 @@ const SnipcartStatefulButton = ({ data, selections }) => {
 
     return (
         <button id={data.sku}
-                className="snipcart-add-item"
+                className="snipcart-add-item btn btn-solid"
                 data-item-id={data.sku}
                 data-item-url={process.env.SNIPCART_BASE_URL}
                 data-item-price={data.price}

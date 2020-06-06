@@ -8,7 +8,7 @@ import Product from "../components/products/product"
 import './index.scss'
 import MainHomePage from "../components/main-home-page"
 
-const IndexPage = ({ data }) => (
+const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     {/* <h1>Hi people</h1>
@@ -37,47 +37,47 @@ const IndexPage = ({ data }) => (
 
 export default IndexPage
 
-export const pageQuery = graphql`
-{
-  allStrapiProduct(filter: {shops: {elemMatch: {title: {eq: "demo_shop_one"}}}}) {
-    edges {
-      node {
-        id
-        weight
-        variable
-        title
-        summary
-        sku
-        price
-        description
-        image {
-          childImageSharp {
-            fixed {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        variations {
-          name
-          options {
-            description
-            value
-          }
-        }
-        category
-        dimensions
-        tags
-        product_gallery {
-          image {
-            childImageSharp {
-              fixed {
-                ...GatsbyImageSharpFixed
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-`
+// export const pageQuery = graphql`
+// {
+//   allStrapiProduct(filter: {shops: {elemMatch: {title: {eq: "demo_shop_one"}}}}) {
+//     edges {
+//       node {
+//         id
+//         weight
+//         variable
+//         title
+//         summary
+//         sku
+//         price
+//         description
+//         image {
+//           childImageSharp {
+//             fixed {
+//               ...GatsbyImageSharpFixed
+//             }
+//           }
+//         }
+//         variations {
+//           name
+//           options {
+//             description
+//             value
+//           }
+//         }
+//         category
+//         dimensions
+//         tags
+//         product_gallery {
+//           image {
+//             childImageSharp {
+//               fixed {
+//                 ...GatsbyImageSharpFixed
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+// `

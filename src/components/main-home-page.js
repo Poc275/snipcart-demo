@@ -24,7 +24,7 @@ const MainHomePage = () => (
                                         <div>
                                             <h4>welcome to James</h4>
                                             <h1>men's fashion</h1>
-                                            <Link to={`${process.env.BASE_URL}/left-sidebar/collection`} className="btn btn-solid">shop now</Link>
+                                            <Link to={`collection`} className="btn btn-solid">shop now</Link>
                                         </div>
                                     </div>
                                 </div>
@@ -41,7 +41,7 @@ const MainHomePage = () => (
                                         <div>
                                             <h4>welcome to James</h4>
                                             <h1>men's accessories</h1>
-                                            <Link to={`${process.env.BASE_URL}/left-sidebar/collection`} className="btn btn-solid">shop now</Link>
+                                            <Link to={`collection`} className="btn btn-solid">shop now</Link>
                                         </div>
                                     </div>
                                 </div>

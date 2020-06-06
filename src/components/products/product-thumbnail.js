@@ -63,7 +63,7 @@ class ProductThumbnail extends Component {
                     </div> */}
 
                     <div className="front">
-                        <Link to={`${process.env.PUBLIC_URL}/left-sidebar/product/${product.id}`} >
+                        <Link to={`/product/${product.id}`} >
                             <Img fixed={product.image.childImageSharp.fixed} className="img-fluid" alt={product.title} />
                         </Link>
                     </div>

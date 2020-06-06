@@ -26,7 +26,7 @@ const Product = ({ data }) => {
     }
 
     return (
-        <div>{productDetail}</div>
+        <>{productDetail}</>
     )
 }
 
