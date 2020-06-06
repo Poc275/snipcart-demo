@@ -1,18 +1,67 @@
 import React, { Component } from 'react'
 import Breadcrumb from "../breadcrumb"
 import StickyBox from "react-sticky-box"
-// import Filter from "./filter"
+import Filter from "./filter"
 import ProductListing from "./product-listing"
 
 class Collection extends Component {
 
     state = {
         layoutColumns: 3,
-        categoryFilter: null
+        visibleProducts: [],
+        categoryFilters: [],
+        tagFilters: [],
+        priceFilter: {}
     }
 
-    filterByCategory = () => {
-        // pass this function to <Filter /> so it is called when a filtering event occurs
+    componentDidMount = () => {
+        // assign products prop to state so we can filter the visible products shown in the collection
+        this.setState({
+            visibleProducts: this.props.products,
+        })
+    }
+
+    filterByCategory = (categories) => {
+        this.setState({
+            categoryFilters: categories
+        }, () => this.filterProducts())
+    }
+
+    filterByTag = (tags) => {
+        this.setState({
+            tagFilters: tags
+        }, () => this.filterProducts())
+    }
+
+    filterByPrice = (range) => {
+        this.setState({
+            priceFilter: range
+        }, () => this.filterProducts())
+    }
+
+    filterProducts = () => {
+        // filters the collection using the state filters and updates ProductListing
+        const filteredProducts = this.props.products.filter((product) => {
+            let categoryMatch = true
+            let tagMatch = true
+
+            if(this.state.categoryFilters.length > 0) {
+                categoryMatch = this.state.categoryFilters.includes(product.node.category)
+            }
+
+            if(this.state.tagFilters.length > 0) {
+                tagMatch = this.state.tagFilters.includes(product.node.tags)
+            }
+
+            const startPriceMatch = this.state.priceFilter.min <= product.node.price
+            const endPriceMatch = product.node.price <= this.state.priceFilter.max
+
+            return categoryMatch && tagMatch && startPriceMatch && endPriceMatch
+        })
+
+        this.setState({
+            visibleProducts: filteredProducts
+        })
     }
 
     render() {
@@ -27,11 +76,11 @@ class Collection extends Component {
                                 <div className="col-sm-3 collection-filter">
                                     <StickyBox offsetTop={20} offsetBottom={20}>
                                         <div>
-                                            {/* <Filter products={this.props.products} /> */}
+                                            <Filter products={this.props.products} categoryFilter={this.filterByCategory} tagFilter={this.filterByTag} priceFilter={this.filterByPrice} />
                                             {/* <NewProduct/> */}
                                             <div className="collection-sidebar-banner">
                                                 <a href="#">
-                                                    <img src={`${process.env.PUBLIC_URL}/assets/images/side-banner.png`} className="img-fluid" alt="" />
+                                                    <img src={`${process.env.BASE_URL}/assets/images/side-banner.png`} className="img-fluid" alt="" />
                                                 </a>
                                             </div>
                                         </div>
@@ -73,7 +122,7 @@ class Collection extends Component {
                                                         </div>
 
                                                         {/*Products Listing Component*/}
-                                                        <ProductListing colSize={this.state.layoutColumns} products={this.props.products} />
+                                                        <ProductListing colSize={this.state.layoutColumns} products={this.state.visibleProducts} />
                                                     </div>
                                                 </div>
                                             </div>
