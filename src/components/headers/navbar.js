@@ -83,14 +83,10 @@ class NavBar extends Component {
                                     <span className="sub-arrow"></span>
                                 </Link>
                                 <ul className="nav-submenu" >
-                                    <li><Link to={`/fashion`} >{'fashion'}</Link></li>
-                                    <li><Link to={`/beauty`} >{'beauty'}</Link></li>
-                                    <li><Link to={`/electronic`} >{'electronic'}</Link></li>
-                                    <li><Link to={`/furniture`} >{'furniture'}</Link></li>
-                                    <li><Link to={`/kids`} >{'kids'}</Link></li>
-                                    <li><Link to={`/pets`} >{'pets'}</Link></li>
-                                    <li><Link to={`/vegetables`} >{'vegetables'}</Link></li>
-                                    <li><Link to={`/watch`} >{'watch'}</Link></li>
+                                    <li><Link to={`/collection`}>{'collection'}</Link></li>
+                                    <li><Link to={`/`}>{'contact us'}</Link></li>
+                                    <li><Link to={`/`} >{'my account'}</Link></li>
+                                    <li><Link to={`/`} >{'about us'}</Link></li>
                                 </ul>
                             </li>
                             {/* <li>

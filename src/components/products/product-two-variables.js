@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import SnipcartStatefulButton from './snipcart-stateful-button'
+import Select from 'react-select'
 
 const ProductTwoVariables = ({ data }) => {
     const initialVariationOne = data.variations[0].options[0].value
@@ -9,6 +10,20 @@ const ProductTwoVariables = ({ data }) => {
     const [selectedVariationTwo, setSelectedVariationTwo] = useState(initialVariationTwo)
 
     const [qty, setQty] = useState(1)
+
+    const variationOneOptions = data.variations[0].options.map((variant) => {
+        return {
+            value: variant.value,
+            label: variant.value
+        }
+    })
+
+    const variationTwoOptions = data.variations[1].options.map((variant) => {
+        return {
+            value: variant.value,
+            label: variant.value
+        }
+    })
 
     return (
         <div className="col-lg-6 rtl-text">
@@ -20,37 +35,18 @@ const ProductTwoVariables = ({ data }) => {
                     <div>
                         <h6 className="product-title size-text">select {data.variations[0].name}</h6>
                     </div>
-                    {/* <ul>
-                        {data.variations[0].options.map((variant, i) => {
-                            return <li key={i}><a href="#">{variant.value}</a></li>
-                        })}
-                    </ul> */}
-                    <select id={data.variations[0].name} onChange={(e) => setSelectedVariationOne(e.target.value)} value={selectedVariationOne}>
-                        {
-                            data.variations[0].options.map((variant) => (
-                                <option key={variant.value}>{variant.value}</option>
-                            ))
-                        }
-                    </select>
+
+                    <Select defaultValue={variationOneOptions[0]} options={variationOneOptions} onChange={(e) => setSelectedVariationOne(e.value)} />
 
                     <div>
                         <h6 className="product-title size-text">select {data.variations[1].name}</h6>
                     </div>
-                    {/* <ul>
-                        {data.variations[0].options.map((variant, i) => {
-                            return <li key={i}><a href="#">{variant.value}</a></li>
-                        })}
-                    </ul> */}
-                    <select id={data.variations[1].name} onChange={(e) => setSelectedVariationTwo(e.target.value)} value={selectedVariationTwo}>
-                        {
-                            data.variations[1].options.map((variant) => (
-                                <option key={variant.value}>{variant.value}</option>
-                            ))
-                        }
-                    </select>
+
+                    <Select defaultValue={variationTwoOptions[0]} options={variationTwoOptions} onChange={(e) => setSelectedVariationTwo(e.value)} />
 
                     <p className="instock-cls">{'InStock'}</p>
                     <h6 className="product-title">quantity</h6>
+
                     <div className="qty-box">
                         <div className="input-group">
                             <span className="input-group-prepend">
@@ -66,32 +62,32 @@ const ProductTwoVariables = ({ data }) => {
                             </span>
                         </div>
                     </div>
+                </div>
 
-                    <div className="product-buttons">
-                        <SnipcartStatefulButton data={data} selections={[selectedVariationOne, selectedVariationTwo]} />
-                        {/* <a className="btn btn-solid" onClick={() => addToCartClicked(item, this.state.quantity)}>add to cart</a> */}
-                        {/* <Link to={`/checkout`} className="btn btn-solid" onClick={() => BuynowClicked(item, this.state.quantity)} >buy now</Link> */}
-                    </div>
+                <div className="product-buttons">
+                    <SnipcartStatefulButton data={data} selections={[selectedVariationOne, selectedVariationTwo]} qty={qty} />
+                    {/* <a className="btn btn-solid" onClick={() => addToCartClicked(item, this.state.quantity)}>add to cart</a> */}
+                    {/* <Link to={`/checkout`} className="btn btn-solid" onClick={() => BuynowClicked(item, this.state.quantity)} >buy now</Link> */}
+                </div>
 
-                    <div className="border-product">
-                        <h6 className="product-title">product details</h6>
-                        <p>{data.summary}</p>
-                    </div>
+                <div className="border-product">
+                    <h6 className="product-title">product details</h6>
+                    <p>{data.summary}</p>
+                </div>
 
-                    <div className="border-product">
-                        <h6 className="product-title">share it</h6>
-                        <div className="product-icon">
-                            <ul className="product-social">
-                                <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i className="fa fa-facebook"></i></a></li>
-                                <li><a href="https://plus.google.com/discover" target="_blank" rel="noopener noreferrer"><i className="fa fa-google-plus"></i></a></li>
-                                <li><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><i className="fa fa-twitter"></i></a></li>
-                                <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i className="fa fa-instagram"></i></a></li>
-                            </ul>
-                            {/* <button className="wishlist-btn" onClick={() => addToWishlistClicked(item)}><i
-                                className="fa fa-heart"></i><span
-                                className="title-font">Add To WishList</span>
-                            </button> */}
-                        </div>
+                <div className="border-product">
+                    <h6 className="product-title">share it</h6>
+                    <div className="product-icon">
+                        <ul className="product-social">
+                            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i className="fa fa-facebook"></i></a></li>
+                            <li><a href="https://plus.google.com/discover" target="_blank" rel="noopener noreferrer"><i className="fa fa-google-plus"></i></a></li>
+                            <li><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><i className="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i className="fa fa-instagram"></i></a></li>
+                        </ul>
+                        {/* <button className="wishlist-btn" onClick={() => addToWishlistClicked(item)}><i
+                            className="fa fa-heart"></i><span
+                            className="title-font">Add To WishList</span>
+                        </button> */}
                     </div>
                 </div>
             </div>

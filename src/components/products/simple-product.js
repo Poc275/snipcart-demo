@@ -28,32 +28,32 @@ const SimpleProduct = ({ data }) => {
                             </span>
                         </div>
                     </div>
+                </div>
 
-                    <div className="product-buttons">
-                        <SnipcartButton data={data} />
-                        {/* <a className="btn btn-solid" onClick={() => addToCartClicked(item, this.state.quantity)}>add to cart</a> */}
-                        {/* <Link to={`/checkout`} className="btn btn-solid" onClick={() => BuynowClicked(item, this.state.quantity)} >buy now</Link> */}
-                    </div>
+                <div className="product-buttons">
+                    <SnipcartButton data={data} qty={qty} />
+                    {/* <a className="btn btn-solid" onClick={() => addToCartClicked(item, this.state.quantity)}>add to cart</a> */}
+                    {/* <Link to={`/checkout`} className="btn btn-solid" onClick={() => BuynowClicked(item, this.state.quantity)} >buy now</Link> */}
+                </div>
 
-                    <div className="border-product">
-                        <h6 className="product-title">product details</h6>
-                        <p>{data.summary}</p>
-                    </div>
+                <div className="border-product">
+                    <h6 className="product-title">product details</h6>
+                    <p>{data.summary}</p>
+                </div>
 
-                    <div className="border-product">
-                        <h6 className="product-title">share it</h6>
-                        <div className="product-icon">
-                            <ul className="product-social">
-                                <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i className="fa fa-facebook"></i></a></li>
-                                <li><a href="https://plus.google.com/discover" target="_blank" rel="noopener noreferrer"><i className="fa fa-google-plus"></i></a></li>
-                                <li><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><i className="fa fa-twitter"></i></a></li>
-                                <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i className="fa fa-instagram"></i></a></li>
-                            </ul>
-                            {/* <button className="wishlist-btn" onClick={() => addToWishlistClicked(item)}><i
-                                className="fa fa-heart"></i><span
-                                className="title-font">Add To WishList</span>
-                            </button> */}
-                        </div>
+                <div className="border-product">
+                    <h6 className="product-title">share it</h6>
+                    <div className="product-icon">
+                        <ul className="product-social">
+                            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i className="fa fa-facebook"></i></a></li>
+                            <li><a href="https://plus.google.com/discover" target="_blank" rel="noopener noreferrer"><i className="fa fa-google-plus"></i></a></li>
+                            <li><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><i className="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i className="fa fa-instagram"></i></a></li>
+                        </ul>
+                        {/* <button className="wishlist-btn" onClick={() => addToWishlistClicked(item)}><i
+                            className="fa fa-heart"></i><span
+                            className="title-font">Add To WishList</span>
+                        </button> */}
                     </div>
                 </div>
             </div>

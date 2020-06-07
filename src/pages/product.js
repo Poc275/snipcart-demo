@@ -32,9 +32,9 @@ class ProductPage extends Component {
 
         const productsNav = {
             slidesToShow: 3,
-            slidesToScroll:1,
-            swipeToSlide:true,
-            draggable:true,
+            slidesToScroll: 1,
+            swipeToSlide: true,
+            draggable: true,
             focusOnSelect: true
         }
 

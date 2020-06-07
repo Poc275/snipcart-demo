@@ -46,7 +46,7 @@ exports.createPages = ({graphql, actions}) => {
                             product_gallery {
                                 image {
                                     childImageSharp {
-                                        fixed {
+                                        fixed(height: 460) {
                                             src
                                         }
                                     }
