@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql, StaticQuery } from "gatsby"
+import { graphql, StaticQuery } from "gatsby"
 import ProductThumbnail from "./products/product-thumbnail"
 import Slider from 'react-slick'
 

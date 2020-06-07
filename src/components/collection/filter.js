@@ -8,7 +8,7 @@ class Filter extends Component {
         super(props);
 
         let maxPrice = 0
-        this.props.products.map((product) => {
+        this.props.products.forEach((product) => {
             if(product.node.price > maxPrice) {
                 maxPrice = product.node.price
             }
@@ -62,13 +62,13 @@ class Filter extends Component {
         const filteredTags = []
 
         const categories = []
-        this.props.products.map((product) => {
+        this.props.products.forEach((product) => {
             if(categories.indexOf(product.node.category) === -1) {
                 categories.push(product.node.category)
             }
         })
         const tags = []
-        this.props.products.map((product) => {
+        this.props.products.forEach((product) => {
             if(tags.indexOf(product.node.tags) === -1) {
                 tags.push(product.node.tags)
             }

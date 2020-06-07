@@ -48,6 +48,7 @@ class ProductThumbnail extends Component {
 
     render() {
         const { product } = this.props
+        const url = `/product/${product.id}`
 
         // let RatingStars = []
         // for(var i = 0; i < product.rating; i++) {
@@ -63,7 +64,7 @@ class ProductThumbnail extends Component {
                     </div> */}
 
                     <div className="front">
-                        <Link to={`/product/${product.id}`} >
+                        <Link to={url}>
                             <Img fixed={product.image.childImageSharp.fixed} className="img-fluid" alt={product.title} />
                         </Link>
                     </div>
@@ -101,10 +102,10 @@ class ProductThumbnail extends Component {
                         {/* <div className="rating">
                             {RatingStars}
                         </div> */}
-                        <Link to={`${process.env.PUBLIC_URL}/left-sidebar/product/${product.id}`}>
+                        <Link to={url}>
                             <h6>{product.title}</h6>
                         </Link>
-                        <h4>£{product.price}
+                        <h4>£{product.price.toFixed(2)}
                             {/* <del><span className="money">{symbol}{product.price}</span></del> */}
                         </h4>
                         {/* {product.variants?

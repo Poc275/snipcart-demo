@@ -67,7 +67,7 @@ class ProductDetailTabs extends Component {
                             <TabPanel>
                                 <form className="theme-form mt-4">
                                     <div className="form-row">
-                                        <div className="col-md-12 ">
+                                        {/* <div className="col-md-12 ">
                                             <div className="media m-0">
                                                 <label>Rating</label>
                                                 <div className="media-body ml-3">
@@ -80,7 +80,7 @@ class ProductDetailTabs extends Component {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
                                         <div className="col-md-6">
                                             <label htmlFor="name">Name</label>
                                             <input type="text" className="form-control" id="name" placeholder="Enter Your name" required />

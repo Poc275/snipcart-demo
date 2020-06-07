@@ -1,14 +1,11 @@
 import React, { Component } from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import Navbar from "./navbar"
 import Logo from "./logo"
 import CartHeader from "./cart-header"
 
 class Header extends Component {
-  constructor(props) {
-      super(props);
-  }
-
+  
   openSearch() {
     document.getElementById("search-overlay").style.display = "block";
   }

@@ -11,7 +11,7 @@ class Instagram extends Component {
         }
     }
 
-    componentWillMount() {
+    componentDidMount() {
         const instagram = ig({
             accessToken: '8295761913.aa0cb6f.2914e9f04dd343b8a57d9dc9baca91cc',
         });
@@ -75,7 +75,7 @@ class Instagram extends Component {
                                 <Slider {...sliderProps} className="slide-7 no-arrow slick-instagram">
                                     {InstaData.map((pic,i) =>
                                         <div key={i}>
-                                            <a href={pic.link} target="_blank">
+                                            <a href={pic.link} target="_blank" rel="noopener noreferrer">
                                                 <div className="instagram-box">
                                                     <img src={`${pic.images.standard_resolution.url}`} alt="Avatar" className="w-100" />
                                                     <div className="overlay">

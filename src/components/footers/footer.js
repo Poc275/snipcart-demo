@@ -63,19 +63,19 @@ class Footer extends Component {
                                     <div className="footer-social">
                                         <ul>
                                             <li>
-                                                <Link to={'https://www.facebook.com/'} ><i className="fa fa-facebook" aria-hidden="true"></i></Link>
+                                                <a href='https://www.facebook.com/'><i className="fa fa-facebook" aria-hidden="true"></i></a>
                                             </li>
                                             <li>
-                                                <Link to={'https://plus.google.com/'} ><i className="fa fa-google-plus" aria-hidden="true"></i></Link>
+                                                <a href='https://plus.google.com/'><i className="fa fa-google-plus" aria-hidden="true"></i></a>
                                             </li>
                                             <li>
-                                                <Link to={'https://twitter.com'}><i className="fa fa-twitter" aria-hidden="true"></i></Link>
+                                                <a href='https://twitter.com'><i className="fa fa-twitter" aria-hidden="true"></i></a>
                                             </li>
                                             <li>
-                                                <Link to={'https://instagram.com'}><i className="fa fa-instagram" aria-hidden="true"></i></Link>
+                                                <a href='https://instagram.com'><i className="fa fa-instagram" aria-hidden="true"></i></a>
                                             </li>
                                             <li>
-                                                <Link to={'https://rss.com/'}><i className="fa fa-rss" aria-hidden="true"></i></Link>
+                                                <a href='https://rss.com/'><i className="fa fa-rss" aria-hidden="true"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -88,10 +88,10 @@ class Footer extends Component {
                                     </div>
                                     <div className="footer-contant">
                                         <ul>
-                                            <li><Link to={`${process.env.PUBLIC_URL}/left-sidebar/collection`} >womens</Link></li>
-                                            <li><Link to={`${process.env.PUBLIC_URL}/left-sidebar/collection`} >clothing</Link></li>
-                                            <li><Link to={`${process.env.PUBLIC_URL}/left-sidebar/collection`} >accessories</Link></li>
-                                            <li><Link to={`${process.env.PUBLIC_URL}/left-sidebar/collection`} >featured</Link></li>
+                                            <li><Link to={`/collection`}>womens</Link></li>
+                                            <li><Link to={`/collection`}>clothing</Link></li>
+                                            <li><Link to={`/collection`}>accessories</Link></li>
+                                            <li><Link to={`/collection`}>featured</Link></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -103,11 +103,11 @@ class Footer extends Component {
                                     </div>
                                     <div className="footer-contant">
                                         <ul>
-                                            <li><a href="#">shipping & return</a></li>
-                                            <li><a href="#">secure shopping</a></li>
-                                            <li><a href="#">gallary</a></li>
-                                            <li><a href="#">affiliates</a></li>
-                                            <li><a href="#">contacts</a></li>
+                                            <li><a href="/">shipping & return</a></li>
+                                            <li><a href="/">secure shopping</a></li>
+                                            <li><a href="/">gallary</a></li>
+                                            <li><a href="/">affiliates</a></li>
+                                            <li><a href="/">contacts</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -124,7 +124,7 @@ class Footer extends Component {
                                             </li>
                                             <li><i className="fa fa-phone"></i>Call Us: 123-456-7898</li>
                                             <li><i className="fa fa-envelope-o"></i>Email Us: <a
-                                                href="#">Support@Fiot.com</a></li>
+                                                href="/">Support@Fiot.com</a></li>
                                             <li><i className="fa fa-fax"></i>Fax: 123456</li>
                                         </ul>
                                     </div>
@@ -141,7 +141,7 @@ class Footer extends Component {
                                     <p><i className="fa fa-copyright" aria-hidden="true"></i> 2020 James | A DGH Nexus Company</p>
                                 </div>
                             </div>
-                            <div className="col-xl-6 col-md-6 col-sm-12">
+                            {/* <div className="col-xl-6 col-md-6 col-sm-12">
                                 <div className="payment-card-bottom">
                                     <ul>
                                         <li>
@@ -161,7 +161,7 @@ class Footer extends Component {
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

@@ -78,22 +78,22 @@ class NavBar extends Component {
                                 </div>
                             </li>
                             <li>
-                                <Link to="#" className="nav-link" onClick={(e) => this.handleSubmenu(e)}>
+                                <Link to="/" className="nav-link" onClick={(e) => this.handleSubmenu(e)}>
                                     {'home'}
                                     <span className="sub-arrow"></span>
                                 </Link>
                                 <ul className="nav-submenu" >
-                                    <li><Link to={`${process.env.BASE_URL}/fashion`} >{'fashion'}</Link></li>
-                                    <li><Link to={`${process.env.BASE_URL}/beauty`} >{'beauty'}</Link></li>
-                                    <li><Link to={`${process.env.BASE_URL}/electronic`} >{'electronic'}</Link></li>
-                                    <li><Link to={`${process.env.BASE_URL}/furniture`} >{'furniture'}</Link></li>
-                                    <li><Link to={`${process.env.BASE_URL}/kids`} >{'kids'}</Link></li>
-                                    <li><Link to={`${process.env.BASE_URL}/pets`} >{'pets'}</Link></li>
-                                    <li><Link to={`${process.env.BASE_URL}/vegetables`} >{'vegetables'}</Link></li>
-                                    <li><Link to={`${process.env.BASE_URL}/watch`} >{'watch'}</Link></li>
+                                    <li><Link to={`/fashion`} >{'fashion'}</Link></li>
+                                    <li><Link to={`/beauty`} >{'beauty'}</Link></li>
+                                    <li><Link to={`/electronic`} >{'electronic'}</Link></li>
+                                    <li><Link to={`/furniture`} >{'furniture'}</Link></li>
+                                    <li><Link to={`/kids`} >{'kids'}</Link></li>
+                                    <li><Link to={`/pets`} >{'pets'}</Link></li>
+                                    <li><Link to={`/vegetables`} >{'vegetables'}</Link></li>
+                                    <li><Link to={`/watch`} >{'watch'}</Link></li>
                                 </ul>
                             </li>
-                            <li>
+                            {/* <li>
                                 <Link to="#" className="nav-link" onClick={(e) => this.handleSubmenu(e)}>
                                     {'shop'}
                                     <span className="sub-arrow"></span>
@@ -105,7 +105,7 @@ class NavBar extends Component {
                                     <li><Link to={`${process.env.BASE_URL}/metro/collection`} >{'category_metro'}</Link></li>
                                     <li><Link to={`${process.env.BASE_URL}/full-width/collection`} >{'category_full_width'}</Link></li>
                                 </ul>
-                            </li>
+                            </li> */}
                             {/* <li>
                                 <Link to="#" className="nav-link" onClick={(e) => this.handleSubmenu(e)}>
                                     {translate('products')}

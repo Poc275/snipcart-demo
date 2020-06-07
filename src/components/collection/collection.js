@@ -3,6 +3,7 @@ import Breadcrumb from "../breadcrumb"
 import StickyBox from "react-sticky-box"
 import Filter from "./filter"
 import ProductListing from "./product-listing"
+import FilterBar from "./filter-bar"
 
 class Collection extends Component {
 
@@ -11,13 +12,23 @@ class Collection extends Component {
         visibleProducts: [],
         categoryFilters: [],
         tagFilters: [],
-        priceFilter: {}
+        priceFilter: null
+    }
+
+    openFilter = () => {
+        document.querySelector(".collection-filter").style = "left: -15px";
     }
 
     componentDidMount = () => {
         // assign products prop to state so we can filter the visible products shown in the collection
         this.setState({
             visibleProducts: this.props.products,
+        })
+    }
+
+    LayoutViewClicked = (columns) => {
+        this.setState({
+            layoutColumns: columns
         })
     }
 
@@ -44,6 +55,8 @@ class Collection extends Component {
         const filteredProducts = this.props.products.filter((product) => {
             let categoryMatch = true
             let tagMatch = true
+            let startPriceMatch = true
+            let endPriceMatch = true
 
             if(this.state.categoryFilters.length > 0) {
                 categoryMatch = this.state.categoryFilters.includes(product.node.category)
@@ -53,14 +66,74 @@ class Collection extends Component {
                 tagMatch = this.state.tagFilters.includes(product.node.tags)
             }
 
-            const startPriceMatch = this.state.priceFilter.min <= product.node.price
-            const endPriceMatch = product.node.price <= this.state.priceFilter.max
+            if(this.state.priceFilter) {
+                startPriceMatch = this.state.priceFilter.min <= product.node.price
+                endPriceMatch = product.node.price <= this.state.priceFilter.max
+            }
 
             return categoryMatch && tagMatch && startPriceMatch && endPriceMatch
         })
 
         this.setState({
             visibleProducts: filteredProducts
+        })
+    }
+
+    filterSort = (value) => {
+        const sortedProducts = this.state.visibleProducts
+        switch(value) {
+            case "HighToLow":
+                sortedProducts.sort((a, b) => {
+                    return b.node.price - a.node.price
+                })
+                break
+            
+            case "LowToHigh":
+                sortedProducts.sort((a, b) => {
+                    return a.node.price - b.node.price
+                })
+                break
+
+            case "AscOrder":
+                sortedProducts.sort((a, b) => {
+                    const nameA = a.node.title.toUpperCase()
+                    const nameB = b.node.title.toUpperCase()
+                    if(nameA < nameB) {
+                        return -1
+                    }
+                    if(nameA > nameB) {
+                        return 1
+                    }
+                    return 0
+                })
+                break
+
+            case "DescOrder":
+                sortedProducts.sort((a, b) => {
+                    const nameA = a.node.title.toUpperCase()
+                    const nameB = b.node.title.toUpperCase()
+                    if(nameB < nameA) {
+                        return -1
+                    }
+                    if(nameB > nameA) {
+                        return 1
+                    }
+                    return 0
+                })
+                break
+
+            // case "Newest":
+            //     // TODO
+            //     break
+
+            default:
+                break
+        }
+
+        console.log(sortedProducts)
+
+        this.setState({
+            visibleProducts: sortedProducts
         })
     }
 
@@ -78,11 +151,11 @@ class Collection extends Component {
                                         <div>
                                             <Filter products={this.props.products} categoryFilter={this.filterByCategory} tagFilter={this.filterByTag} priceFilter={this.filterByPrice} />
                                             {/* <NewProduct/> */}
-                                            <div className="collection-sidebar-banner">
+                                            {/* <div className="collection-sidebar-banner">
                                                 <a href="#">
                                                     <img src={`${process.env.BASE_URL}/assets/images/side-banner.png`} className="img-fluid" alt="" />
                                                 </a>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </StickyBox>
                                     {/*side-bar banner end here*/}
@@ -93,7 +166,7 @@ class Collection extends Component {
                                             <div className="row">
                                                 <div className="col-sm-12">
                                                     <div className="top-banner-wrapper">
-                                                        <a href="#"><img src={`${process.env.BASE_URL}/assets/images/mega-menu/2.jpg`} className="img-fluid" alt=""/></a>
+                                                        <img src={`${process.env.BASE_URL}/assets/images/mega-menu/2.jpg`} className="img-fluid" alt=""/>
                                                         <div className="top-banner-content small-section">
                                                             <h4>the james collection</h4>
                                                             <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h5>
@@ -115,7 +188,7 @@ class Collection extends Component {
                                                                 </div>
                                                                 <div className="row">
                                                                     <div className="col-12">
-                                                                        {/* <FilterBar onLayoutViewClicked={(colmuns) => this.LayoutViewClicked(colmuns)}/> */}
+                                                                        <FilterBar filterSort={this.filterSort} numProducts={this.state.visibleProducts.length} onLayoutViewClicked={(columns) => this.LayoutViewClicked(columns)}/>
                                                                     </div>
                                                                 </div>
                                                             </div>

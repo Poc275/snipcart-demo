@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import Slider from 'react-slick'
-import { useStaticQuery, graphql } from "gatsby"
 import TopCollection from "./top-collection";
 import Instagram from "./instagram";
 import {
@@ -24,7 +23,7 @@ const MainHomePage = () => (
                                         <div>
                                             <h4>welcome to James</h4>
                                             <h1>men's fashion</h1>
-                                            <Link to={`collection`} className="btn btn-solid">shop now</Link>
+                                            <Link to={`/collection`} className="btn btn-solid">shop now</Link>
                                         </div>
                                     </div>
                                 </div>
@@ -41,7 +40,7 @@ const MainHomePage = () => (
                                         <div>
                                             <h4>welcome to James</h4>
                                             <h1>men's accessories</h1>
-                                            <Link to={`collection`} className="btn btn-solid">shop now</Link>
+                                            <Link to={`/collection`} className="btn btn-solid">shop now</Link>
                                         </div>
                                     </div>
                                 </div>
@@ -58,7 +57,7 @@ const MainHomePage = () => (
             <div className="container">
                 <div className="row partition2">
                     <div className="col-md-6">
-                        <Link to={`${process.env.BASE_URL}/left-sidebar/collection`}>
+                        <Link to={`/collection`}>
                             <div className="collection-banner p-right text-center">
                                 <img src={`${process.env.BASE_URL}/assets/images/sub-banner.jpg`} className="img-fluid" alt=""/>
                                     <div className="contain-banner">
@@ -71,7 +70,7 @@ const MainHomePage = () => (
                         </Link>
                     </div>
                     <div className="col-md-6">
-                        <Link to={`${process.env.BASE_URL}/left-sidebar/collection`}>
+                        <Link to={`/collection`}>
                             <div className="collection-banner p-right text-center">
                                 <img src={`${process.env.BASE_URL}/assets/images/sub-banner.jpg`} className="img-fluid" alt=""/>
                                     <div className="contain-banner">
