@@ -56,7 +56,7 @@ class Footer extends Component {
                                 </div>
                                 <div className="footer-contant">
                                     <div className="footer-logo">
-                                        <Logo logo={'logo.png'} />
+                                        <Logo logo={'james-shop-logo.jpg'} />
                                     </div>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
@@ -84,14 +84,14 @@ class Footer extends Component {
                             <div className="col offset-xl-1">
                                 <div className="sub-title">
                                     <div className="footer-title">
-                                        <h4>my account</h4>
+                                        <h4>browse by category</h4>
                                     </div>
                                     <div className="footer-contant">
                                         <ul>
-                                            <li><Link to={`/collection`}>womens</Link></li>
                                             <li><Link to={`/collection`}>clothing</Link></li>
                                             <li><Link to={`/collection`}>accessories</Link></li>
-                                            <li><Link to={`/collection`}>featured</Link></li>
+                                            {/* <li><Link to={`/collection`}>accessories</Link></li> */}
+                                            {/* <li><Link to={`/collection`}>featured</Link></li> */}
                                         </ul>
                                     </div>
                                 </div>
@@ -99,15 +99,16 @@ class Footer extends Component {
                             <div className="col">
                                 <div className="sub-title">
                                     <div className="footer-title">
-                                        <h4>why we choose</h4>
+                                        <h4>customer services</h4>
                                     </div>
                                     <div className="footer-contant">
                                         <ul>
-                                            <li><a href="/">shipping & return</a></li>
-                                            <li><a href="/">secure shopping</a></li>
-                                            <li><a href="/">gallary</a></li>
-                                            <li><a href="/">affiliates</a></li>
-                                            <li><a href="/">contacts</a></li>
+                                            <li><a href="/">my account</a></li>
+                                            <li><a href="/">shipping</a></li>
+                                            <li><a href="/">returns</a></li>
+                                            <li><a href="/">faq</a></li>
+                                            <li><a href="/">terms and conditions</a></li>
+                                            <li><a href="/">privacy policy</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -119,13 +120,12 @@ class Footer extends Component {
                                     </div>
                                     <div className="footer-contant">
                                         <ul className="contact-list">
-                                            <li><i className="fa fa-map-marker"></i>Multikart Demo Store, Demo store
-                                                India 345-659
+                                            <li><i className="fa fa-map-marker"></i>Heanor, Derbyshire DE75 7DR, UK
                                             </li>
-                                            <li><i className="fa fa-phone"></i>Call Us: 123-456-7898</li>
-                                            <li><i className="fa fa-envelope-o"></i>Email Us: <a
-                                                href="/">Support@Fiot.com</a></li>
-                                            <li><i className="fa fa-fax"></i>Fax: 123456</li>
+                                            <li><i className="fa fa-phone"></i>123-456-7898</li>
+                                            <li><i className="fa fa-envelope-o"></i>
+                                                <a href="mailto:support@james-shop.co.uk">support@james-shop.co.uk</a></li>
+                                            <li><i className="fa fa-clock-o "></i>Monday to Friday 9AM - 4.30PM</li>
                                         </ul>
                                     </div>
                                 </div>

@@ -72,7 +72,7 @@ const MainHomePage = () => (
                     <div className="col-md-6">
                         <Link to={`/collection`}>
                             <div className="collection-banner p-right text-center">
-                                <img src={`${process.env.BASE_URL}/assets/images/sub-banner.jpg`} className="img-fluid" alt=""/>
+                                <img src={`${process.env.BASE_URL}/assets/images/sub-banner3.jpg`} className="img-fluid" alt=""/>
                                     <div className="contain-banner">
                                         <div>
                                             <h4>shop</h4>

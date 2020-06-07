@@ -27,7 +27,7 @@ class Header extends Component {
                       {/* Sidebar goes here */}
                     </div>
                     <div className="brand-logo">
-                      <Logo logo={'logo.png'} />
+                      <Logo logo={'james-shop-logo.jpg'} />
                     </div>
                   </div>
                   <div className="menu-right pull-right">
