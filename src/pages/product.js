@@ -38,45 +38,50 @@ class ProductPage extends Component {
             focusOnSelect: true
         }
 
-        return (
-            <Layout>
-                <SEO title={product.title} />
+        // check if product exists as it's undefined during build which throws an error
+        if(product) {
+            return (
+                <Layout>
+                    <SEO title={product.title} />
 
-                <Breadcrumb title={'Product / '+ product.title} />
+                    <Breadcrumb title={'Product / ' + product.title} />
 
-                <section >
-                    <div className="collection-wrapper">
+                    <section>
+                        <div className="collection-wrapper">
+                            <div className="container">
+                                <div className="row">
+                                    <div className="col-lg-6 product-thumbnail">
+                                        <Slider {...product} asNavFor={this.state.nav2} ref={slider => (this.slider1 = slider)} className="product-slick">
+                                            {product.product_gallery.map((vari, index) =>
+                                                <div key={index}>
+                                                    <ImageZoom image={vari.image.childImageSharp.fixed.src} className="img-fluid image_zoom_cls-0" />
+                                                </div>
+                                            )}
+                                        </Slider>
+                                        <SmallImages product={product} settings={productsNav} navOne={this.state.nav1} />
+                                    </div>
+                                    <Product data={product} />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section className="tab-product m-0">
                         <div className="container">
                             <div className="row">
-                                <div className="col-lg-6 product-thumbnail">
-                                    <Slider {...product} asNavFor={this.state.nav2} ref={slider => (this.slider1 = slider)} className="product-slick">
-                                        {product.product_gallery.map((vari, index) =>
-                                            <div key={index}>
-                                                <ImageZoom image={vari.image.childImageSharp.fixed.src} className="img-fluid image_zoom_cls-0" />
-                                            </div>
-                                        )}
-                                    </Slider>
-                                    <SmallImages product={product} settings={productsNav} navOne={this.state.nav1} />
+                                <div className="col-sm-12 col-lg-12">
+                                    <ProductDetailTabs product={product} />
                                 </div>
-                                <Product data={product} />
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
 
-                <section className="tab-product m-0">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-sm-12 col-lg-12">
-                                <ProductDetailTabs product={product} />
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <RelatedProducts />
-            </Layout>
-        )
+                    <RelatedProducts />
+                </Layout>
+            )
+        } else {
+            return null
+        }
     }
 }
 

@@ -57,7 +57,6 @@ exports.createPages = ({graphql, actions}) => {
                 }
             }
         `).then(result => {
-            console.log(result)
             result.data.allStrapiProduct.edges.forEach(({node}) => {
                 createPage({
                     path: `/product/${node.id}`,

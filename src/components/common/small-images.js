@@ -20,6 +20,8 @@ class SmallImages extends Component {
 
         var productsnav = settings
 
+        console.log(product)
+
         return (
             <div className="row">
                 <div className="col-12 p-0">
