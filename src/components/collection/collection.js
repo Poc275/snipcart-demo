@@ -130,8 +130,6 @@ class Collection extends Component {
                 break
         }
 
-        console.log(sortedProducts)
-
         this.setState({
             visibleProducts: sortedProducts
         })
