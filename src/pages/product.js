@@ -8,6 +8,7 @@ import SmallImages from '../components/common/small-images'
 import ProductDetailTabs from '../components/products/product-detail-tabs'
 import RelatedProducts from '../components/products/related-products'
 import Product from '../components/products/product'
+import Img from 'gatsby-image'
 
 class ProductPage extends Component {
 
@@ -38,18 +39,26 @@ class ProductPage extends Component {
             focusOnSelect: true
         }
 
+        const holzkernStyleNav = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 3,
+            slidesToScroll: 1
+        }
+
         // check if product exists as it's undefined during build which throws an error
         if(product) {
             return (
                 <Layout>
                     <SEO title={product.title} />
 
-                    <Breadcrumb title={'Product / ' + product.title} />
+                    <Breadcrumb title={product.title} />
 
                     <section>
                         <div className="collection-wrapper">
                             <div className="container">
-                                <div className="row">
+                                {/* <div className="row">
                                     <div className="col-lg-6 product-thumbnail">
                                         <Slider {...product} asNavFor={this.state.nav2} ref={slider => (this.slider1 = slider)} className="product-slick">
                                             {product.product_gallery.map((vari, index) =>
@@ -61,7 +70,29 @@ class ProductPage extends Component {
                                         <SmallImages product={product} settings={productsNav} navOne={this.state.nav1} />
                                     </div>
                                     <Product data={product} />
+                                </div> */}
+
+                                <div className="row">
+                                    <div className="col">
+                                        <Slider {...holzkernStyleNav} className="product-slick">
+                                            {product.product_gallery.map((vari, index) =>
+                                                <div key={index}>
+                                                    <ImageZoom image={vari.image.childImageSharp.fixed.src} className="img-fluid image_zoom_cls-0" />
+                                                </div>
+                                            )}
+                                        </Slider>
+                                    </div>
                                 </div>
+
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <section className="tab-product m-0">
+                        <div className="container">
+                            <div className="row mt-5">
+                                <Product data={product} />
                             </div>
                         </div>
                     </section>
