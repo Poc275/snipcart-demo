@@ -80,15 +80,31 @@ class NavBar extends Component {
                             <li>
                                 <Link to="/" className="nav-link" onClick={(e) => this.handleSubmenu(e)}>
                                     {'home'}
-                                    <span className="sub-arrow"></span>
+                                    {/* <span className="sub-arrow"></span> */}
                                 </Link>
-                                <ul className="nav-submenu" >
+                                {/* <ul className="nav-submenu" >
                                     <li><Link to={`/collection`}>{'collection'}</Link></li>
                                     <li><Link to={`/`}>{'contact us'}</Link></li>
                                     <li><Link to={`/`} >{'my account'}</Link></li>
                                     <li><Link to={`/`} >{'about us'}</Link></li>
-                                </ul>
+                                </ul> */}
                             </li>
+                            <li>
+                                <Link to="/collection" className="nav-link" onClick={(e) => this.handleSubmenu(e)}>
+                                    {'shop'}
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/" className="nav-link" onClick={(e) => this.handleSubmenu(e)}>
+                                    {'contact us'}
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/" className="nav-link" onClick={(e) => this.handleSubmenu(e)}>
+                                    {'my account'}
+                                </Link>
+                            </li>
+
                             {/* <li>
                                 <Link to="#" className="nav-link" onClick={(e) => this.handleSubmenu(e)}>
                                     {'shop'}
