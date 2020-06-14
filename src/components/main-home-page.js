@@ -1,8 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 import Slider from 'react-slick'
-import TopCollection from "./top-collection";
-import Instagram from "./instagram";
+import TopCollection from "./top-collection"
+import Instagram from "./instagram"
+import NewsTicker from "./news-ticker"
 import {
     svgFreeShipping,
     svgservice,
@@ -11,6 +12,8 @@ import {
 
 const MainHomePage = () => (
     <div>
+        <NewsTicker />
+
         {/*Home Slider*/}
         <section className="p-0">
             <Slider className="slide-1 home-slider">
