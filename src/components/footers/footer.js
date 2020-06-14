@@ -22,7 +22,7 @@ class Footer extends Component {
     render() {
         return (
             <footer className="footer-light">
-                <div className="light-layout">
+                {/* <div className="light-layout">
                     <div className="container">
                         <section className="small-section border-section border-top-0">
                             <div className="row">
@@ -46,7 +46,7 @@ class Footer extends Component {
                             </div>
                         </section>
                     </div>
-                </div>
+                </div> */}
                 <section className="section-b-space light-layout">
                     <div className="container">
                         <div className="row footer-theme partition-f">
@@ -56,11 +56,12 @@ class Footer extends Component {
                                 </div>
                                 <div className="footer-contant">
                                     <div className="footer-logo">
-                                        <Logo logo={'james-shop-logo.jpg'} />
+                                        <Logo logo={'dgh-nexus-logo.jpg'} />
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
-                                    <div className="footer-social">
+                                    <p>James is a <a href="https://dgh-nexus.co.uk/">DGH Nexus Company</a></p>
+                                    {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p> */}
+                                    {/* <div className="footer-social">
                                         <ul>
                                             <li>
                                                 <a href='https://www.facebook.com/'><i className="fa fa-facebook" aria-hidden="true"></i></a>
@@ -78,10 +79,10 @@ class Footer extends Component {
                                                 <a href='https://rss.com/'><i className="fa fa-rss" aria-hidden="true"></i></a>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
-                            <div className="col offset-xl-1">
+                            {/* <div className="col offset-xl-1">
                                 <div className="sub-title">
                                     <div className="footer-title">
                                         <h4>browse by category</h4>
@@ -90,12 +91,10 @@ class Footer extends Component {
                                         <ul>
                                             <li><Link to={`/collection`}>clothing</Link></li>
                                             <li><Link to={`/collection`}>accessories</Link></li>
-                                            {/* <li><Link to={`/collection`}>accessories</Link></li> */}
-                                            {/* <li><Link to={`/collection`}>featured</Link></li> */}
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                             <div className="col">
                                 <div className="sub-title">
                                     <div className="footer-title">
@@ -103,7 +102,6 @@ class Footer extends Component {
                                     </div>
                                     <div className="footer-contant">
                                         <ul>
-                                            <li><a href="/">my account</a></li>
                                             <li><a href="/">shipping</a></li>
                                             <li><a href="/">returns</a></li>
                                             <li><a href="/">faq</a></li>
@@ -116,16 +114,36 @@ class Footer extends Component {
                             <div className="col">
                                 <div className="sub-title">
                                     <div className="footer-title">
-                                        <h4>store information</h4>
+                                        <h4>contact us</h4>
                                     </div>
                                     <div className="footer-contant">
                                         <ul className="contact-list">
-                                            <li><i className="fa fa-map-marker"></i>Heanor, Derbyshire DE75 7DR, UK
-                                            </li>
+                                            <li><i className="fa fa-map-marker"></i>Heanor, Derbyshire DE75 7DR, UK</li>
                                             <li><i className="fa fa-phone"></i>123-456-7898</li>
                                             <li><i className="fa fa-envelope-o"></i>
-                                                <a href="mailto:support@james-shop.co.uk">support@james-shop.co.uk</a></li>
-                                            <li><i className="fa fa-clock-o "></i>Monday to Friday 9AM - 4.30PM</li>
+                                                <a href="mailto:support@james-shop.co.uk">support@james-shop.co.uk</a>
+                                            </li>
+                                            <li><i className="fa fa-clock-o"></i>Monday to Friday 9AM - 4.30PM</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col">
+                                <div className="sub-title">
+                                    <div className="footer-title">
+                                        <h4>social media</h4>
+                                    </div>
+                                    <div className="footer-contant">
+                                        <ul>
+                                            <li>
+                                                <a href='https://www.facebook.com/'><i className="fa fa-facebook" aria-hidden="true"></i> Facebook</a>
+                                            </li>
+                                            <li>
+                                                <a href='https://instagram.com'><i className="fa fa-instagram" aria-hidden="true"></i> Instagram</a>
+                                            </li>
+                                            <li>
+                                                <a href='https://www.pinterest.co.uk/'><i className="fa fa-pinterest" aria-hidden="true"></i> Pinterest</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
