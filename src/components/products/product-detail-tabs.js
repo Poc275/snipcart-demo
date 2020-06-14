@@ -14,11 +14,11 @@ class ProductDetailTabs extends Component {
                             <TabList className="nav nav-tabs nav-material">
                                 <Tab className="nav-item">
                                     <span className="nav-link active">
-                                        <i className="icofont icofont-ui-home"></i>Description</span>
+                                        <i className="icofont icofont-ui-home"></i>Details</span>
                                     <div className="material-border"></div>
                                 </Tab>
                                 <Tab className="nav-item">
-                                    <span className="nav-link" ><i className="icofont icofont-man-in-glasses"></i>Details</span>
+                                    <span className="nav-link" ><i className="icofont icofont-man-in-glasses"></i>Description</span>
                                     <div className="material-border"></div>
                                 </Tab>
                                 {/* <Tab className="nav-item">
@@ -50,11 +50,23 @@ class ProductDetailTabs extends Component {
                                         </tr>
                                         <tr>
                                             <th>Weight</th>
-                                            <td>{product.weight}g</td>
+                                            <td>{product.weight}g | {product.packed_weight}g (packed)</td>
                                         </tr>
                                         <tr>
                                             <th>Dimensions</th>
                                             <td>{product.dimensions}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Primary Material</th>
+                                            <td>{product.primary_material}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Secondary Material</th>
+                                            <td>{product.secondary_material === "null" ? "N/A" : product.secondary_material}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Tertiary Material</th>
+                                            <td>{product.tertiary_material === "null" ? "N/A" : product.tertiary_material}</td>
                                         </tr>
                                     </tbody>
                                 </table>

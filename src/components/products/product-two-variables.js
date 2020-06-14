@@ -35,6 +35,12 @@ const ProductTwoVariables = ({ data }) => {
                         <div className="border-product">
                             <h6 className="product-title">product details</h6>
                             <p>{data.description}</p>
+
+                            <h6 className="product-title mt-3">materials</h6>
+                            <p>{data.primary_material} 
+                                {data.secondary_material === "null" ? null : " | " + data.secondary_material} 
+                                {data.tertiary_material === "null" ? null : " | " + data.tertiary_material}
+                            </p>
                         </div>
 
                         <h6 className="product-title size-text">select {data.variations[0].name}</h6>

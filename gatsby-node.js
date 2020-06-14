@@ -20,6 +20,7 @@ exports.createPages = ({graphql, actions}) => {
                         node {
                             id
                             weight
+                            packed_weight
                             variable
                             title
                             summary
@@ -52,6 +53,9 @@ exports.createPages = ({graphql, actions}) => {
                                     }
                                 }
                             }
+                            primary_material
+                            secondary_material
+                            tertiary_material
                         }
                     }
                 }
