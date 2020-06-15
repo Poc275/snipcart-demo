@@ -19,43 +19,6 @@ exports.createPages = ({graphql, actions}) => {
                     edges {
                         node {
                             id
-                            weight
-                            packed_weight
-                            variable
-                            title
-                            summary
-                            sku
-                            price
-                            description
-                            image {
-                                childImageSharp {
-                                    fixed {
-                                        src
-                                    }
-                                }
-                            }
-                            variations {
-                                name
-                                options {
-                                    description
-                                    value
-                                }
-                            }
-                            category
-                            dimensions
-                            tags
-                            product_gallery {
-                                image {
-                                    childImageSharp {
-                                        fixed(height: 460) {
-                                            src
-                                        }
-                                    }
-                                }
-                            }
-                            primary_material
-                            secondary_material
-                            tertiary_material
                         }
                     }
                 }
@@ -66,7 +29,7 @@ exports.createPages = ({graphql, actions}) => {
                     path: `/product/${node.id}`,
                     component: path.resolve('./src/pages/product.js'),
                     context: {
-                        product: node
+                        productId: node.id
                     },
                 })
             })

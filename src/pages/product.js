@@ -9,6 +9,7 @@ import ProductDetailTabs from '../components/products/product-detail-tabs'
 import RelatedProducts from '../components/products/related-products'
 import Product from '../components/products/product'
 import Img from 'gatsby-image'
+import { graphql } from "gatsby"
 
 class ProductPage extends Component {
 
@@ -28,8 +29,9 @@ class ProductPage extends Component {
     }
 
     render() {
-        // pageContext is retrieved from the context property in createPage() (see gatsby-node.js)
-        const { product } = this.props.pageContext
+        // get product data from page query
+        // (available from this.props.data)
+        const product = this.props.data.allStrapiProduct.edges[0].node
 
         const productsNav = {
             slidesToShow: 3,
@@ -77,7 +79,8 @@ class ProductPage extends Component {
                                         <Slider {...holzkernStyleNav} className="product-slick">
                                             {product.product_gallery.map((vari, index) =>
                                                 <div key={index}>
-                                                    <ImageZoom image={vari.image.childImageSharp.fixed.src} className="img-fluid image_zoom_cls-0" />
+                                                    {/* <ImageZoom image={vari.image.childImageSharp.fixed.src} className="img-fluid image_zoom_cls-0" /> */}
+                                                    <Img fixed={vari.image.childImageSharp.fixed} className="img-fluid image_zoom_cls-0" alt={product.title} />
                                                 </div>
                                             )}
                                         </Slider>
@@ -117,3 +120,58 @@ class ProductPage extends Component {
 }
 
 export default ProductPage
+
+// get the full product information, only the product id is assigned 
+// to the page context in gatsby-node (productId) to limit the amount 
+// of information passed around during build.
+// Page context keys that match with arguments in the page query (productId in this case) 
+// will be used as variables if they are prefixed with a '$':
+// https://www.gatsbyjs.org/docs/page-query/#how-to-add-query-variables-to-a-page-query
+export const query = graphql`
+    query GetProduct($productId: String) {
+        allStrapiProduct(filter: {id: {eq: $productId}}) {
+            edges {
+                node {
+                    id
+                    weight
+                    packed_weight
+                    variable
+                    title
+                    summary
+                    sku
+                    price
+                    description
+                    image {
+                        childImageSharp {
+                            fixed {
+                                ...GatsbyImageSharpFixed
+                            }
+                        }
+                    }
+                    variations {
+                        name
+                        options {
+                            description
+                            value
+                        }
+                    }
+                    category
+                    dimensions
+                    tags
+                    product_gallery {
+                        image {
+                            childImageSharp {
+                                fixed(height: 460) {
+                                    ...GatsbyImageSharpFixed
+                                }
+                            }
+                        }
+                    }
+                    primary_material
+                    secondary_material
+                    tertiary_material
+                }
+            }
+        }
+    }
+`
