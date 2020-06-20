@@ -17,10 +17,20 @@
     margin: 2rem 0 1rem 0;
 }
 
-#shipping-information p {
+#shipping-information ul li,
+#ts-and-cs-information ul li {
+    display: list-item;
+}
+
+#returns-information p,
+#ts-and-cs-information p {
     margin: 1rem 0;
 }
 
-#shipping-information ul li {
-    display: list-item;
+#ts-and-cs-information ul li {
+    color: #777;
+}
+
+#ts-and-cs-information h3 {
+    color: #000;
 }

@@ -11,7 +11,7 @@ const Returns = () => (
         <section className="about-page  section-b-space">
             <div className="container">
                 <div className="row">
-                    <div className="col-sm-12" id="shipping-information">
+                    <div className="col-sm-12" id="returns-information">
                         <h3>How to return</h3>
                         <p>Either complete the <a href="/contact">contact form</a> or email us at <a href="mailto:support@james-shop.co.uk">support@james-shop.co.uk</a> quoting 
                             your order number and describing which items you want to return and for what reason and whether you want a refund or an exchange.</p>

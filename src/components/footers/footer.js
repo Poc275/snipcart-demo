@@ -105,7 +105,7 @@ class Footer extends Component {
                                             <li><a href="/shipping">shipping</a></li>
                                             <li><a href="/returns">returns</a></li>
                                             <li><a href="/faqs">faq</a></li>
-                                            <li><a href="/">terms and conditions</a></li>
+                                            <li><a href="/terms-and-conditions">terms and conditions</a></li>
                                             <li><a href="/">privacy policy</a></li>
                                         </ul>
                                     </div>
