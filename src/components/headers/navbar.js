@@ -95,7 +95,7 @@ class NavBar extends Component {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/" className="nav-link" onClick={(e) => this.handleSubmenu(e)}>
+                                <Link to="/contact" className="nav-link" onClick={(e) => this.handleSubmenu(e)}>
                                     {'contact us'}
                                 </Link>
                             </li>
