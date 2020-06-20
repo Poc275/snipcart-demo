@@ -10,3 +10,13 @@
 
 // main theme styles
 @import "../../static/assets/scss/color1.scss";
+
+// custom styles
+#shipping-information h3,
+#shipping-information h4 {
+    margin: 2rem 0 1rem 0;
+}
+
+#shipping-information ul li {
+    display: list-item;
+}
