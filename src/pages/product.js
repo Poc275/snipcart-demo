@@ -3,8 +3,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Breadcrumb from "../components/breadcrumb"
 import Slider from 'react-slick'
-import ImageZoom from '../components/common/image-zoom'
-import SmallImages from '../components/common/small-images'
+// import ImageZoom from '../components/common/image-zoom'
+// import SmallImages from '../components/common/small-images'
 import ProductDetailTabs from '../components/products/product-detail-tabs'
 import RelatedProducts from '../components/products/related-products'
 import Product from '../components/products/product'
