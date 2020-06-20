@@ -103,7 +103,7 @@ class Footer extends Component {
                                     <div className="footer-contant">
                                         <ul>
                                             <li><a href="/shipping">shipping</a></li>
-                                            <li><a href="/">returns</a></li>
+                                            <li><a href="/returns">returns</a></li>
                                             <li><a href="/faqs">faq</a></li>
                                             <li><a href="/">terms and conditions</a></li>
                                             <li><a href="/">privacy policy</a></li>
