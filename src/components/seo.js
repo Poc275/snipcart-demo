@@ -69,7 +69,9 @@ function SEO({ description, lang, meta, title }) {
         },
       ].concat(meta)}
     >
-      <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.11/default/snipcart.css" />
+      <link rel="preconnect" href="https://app.snipcart.com" />
+      <link rel="preconnect" href="https://cdn.snipcart.com" />
+      <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.15/default/snipcart.css" />
     </Helmet>
   )
 }
