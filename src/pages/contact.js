@@ -4,10 +4,6 @@ import Breadcrumb from "../components/breadcrumb"
 import Layout from "../components/layout"
 
 class Contact extends Component {
-    constructor (props) {
-        super (props)
-    }
-
     render (){
         return (
             <Layout>
@@ -18,7 +14,7 @@ class Contact extends Component {
                     <div className="container">
                         <div className="row section-b-space">
                             <div className="col-lg-7 map">
-                                <iframe width="600" height="450" frameBorder="0" style={{ "border":0 }} 
+                                <iframe title="map" width="600" height="450" frameBorder="0" style={{ "border":0 }} 
                                     src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJuUs1cePseUgRdn3h9MCLRS4&key=AIzaSyBK-MLMYxipGuLE2PQSDeeZIhlhnqxA_v8" 
                                     allowFullScreen></iframe>
                             </div>

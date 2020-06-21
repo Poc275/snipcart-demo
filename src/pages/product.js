@@ -33,13 +33,13 @@ class ProductPage extends Component {
         // (available from this.props.data)
         const product = this.props.data.allStrapiProduct.edges[0].node
 
-        const productsNav = {
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            swipeToSlide: true,
-            draggable: true,
-            focusOnSelect: true
-        }
+        // const productsNav = {
+        //     slidesToShow: 3,
+        //     slidesToScroll: 1,
+        //     swipeToSlide: true,
+        //     draggable: true,
+        //     focusOnSelect: true
+        // }
 
         const holzkernStyleNav = {
             dots: true,
