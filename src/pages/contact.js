@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import SEO from "../components/seo"
 import Breadcrumb from "../components/breadcrumb"
 import Layout from "../components/layout"
+import './index.scss'
 
 class Contact extends Component {
     render (){
