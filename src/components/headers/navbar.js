@@ -90,17 +90,20 @@ class NavBar extends Component {
                                 </ul> */}
                             </li>
                             <li>
-                                <Link to="/collection" className="nav-link" onClick={(e) => this.handleSubmenu(e)}>
+                                {/* <Link to="/collection" className="nav-link" onClick={(e) => this.handleSubmenu(e)}> */}
+                                <Link to="/collection" className="nav-link">
                                     {'shop'}
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/contact" className="nav-link" onClick={(e) => this.handleSubmenu(e)}>
+                                {/* <Link to="/contact" className="nav-link" onClick={(e) => this.handleSubmenu(e)}> */}
+                                <Link to="/contact" className="nav-link">
                                     {'contact us'}
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/" className="nav-link" onClick={(e) => this.handleSubmenu(e)}>
+                                {/* <Link to={"/"} className="nav-link snipcart-customer-signin" onClick={(e) => this.handleSubmenu(e)}> */}
+                                <Link to={"/"} className="nav-link snipcart-customer-signin">
                                     {'my account'}
                                 </Link>
                             </li>
