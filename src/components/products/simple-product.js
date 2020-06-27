@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import SnipcartButton from './snipcart-button'
+import Stock from './stock'
 
 const SimpleProduct = ({ data }) => {
     const [qty, setQty] = useState(1)
@@ -30,7 +31,8 @@ const SimpleProduct = ({ data }) => {
                     <h3>£{data.price.toFixed(2)} </h3>
 
                     <div className="product-description border-product">
-                        <p className="instock-cls">{'InStock'}</p>
+                        <Stock productId={data.sku} variants={[]} />
+
                         <h6 className="product-title">quantity</h6>
 
                         <div className="qty-box">

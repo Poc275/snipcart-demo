@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import SnipcartStatefulButton from './snipcart-stateful-button'
 import Select from 'react-select'
+import Stock from './stock'
 
 const ProductTwoVariables = ({ data }) => {
     const initialVariationOne = data.variations[0].options[0].value
@@ -57,9 +58,11 @@ const ProductTwoVariables = ({ data }) => {
                     <h3>£{data.price.toFixed(2)} </h3>
 
                     <div className="product-description border-product">
-                        <p className="instock-cls">{'InStock'}</p>
-                        <h6 className="product-title">quantity</h6>
+                        <Stock productId={data.sku} 
+                            variants={[{'name': data.variations[0].name, 'option': selectedVariationOne}, {'name': data.variations[1].name, 'option': selectedVariationTwo}]} 
+                        />
 
+                        <h6 className="product-title">quantity</h6>
                         <div className="qty-box">
                             <div className="input-group">
                                 <span className="input-group-prepend">
