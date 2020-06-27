@@ -82,9 +82,11 @@ const Stock = ({ productId, variants, onStockQtyChange }) => {
         if(stockDataReady) {
             if(variants.length > 0) {
                 const variation = findStockForVariableProducts()
-                setStock(variation.stock)
-                // call parent product with updated qty
-                onStockQtyChange(variation.stock)
+                if(variation) {
+                    setStock(variation.stock)
+                    // call parent product with updated qty
+                    onStockQtyChange(variation.stock)
+                }
             } else {
                 const stock = findStockForSimpleProducts()
                 setStock(stock)
