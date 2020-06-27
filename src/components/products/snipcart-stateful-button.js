@@ -20,6 +20,7 @@ const SnipcartStatefulButton = ({ disabled, data, selections, qty }) => {
             snipcartBtn.setAttribute('data-item-custom' + (idx + 1) + '-name', data.variations[idx].name)
             snipcartBtn.setAttribute('data-item-custom' + (idx + 1) + '-options', variation.join('|'))
             snipcartBtn.setAttribute('data-item-custom' + (idx + 1) + '-value', selections[idx])
+            snipcartBtn.setAttribute('data-item-custom' + (idx + 1) + '-required', 'true')
         })
     }, [selections, data.sku, data.variations])
 
