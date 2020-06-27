@@ -4,6 +4,12 @@ import Stock from './stock'
 
 const SimpleProduct = ({ data }) => {
     const [qty, setQty] = useState(1)
+    const [stockQty, setStockQty] = useState(0)
+
+    const handleStockQtyChange = (stockQty) => {
+        // new stock level has been retrieved from the Stock component
+        setStockQty(stockQty)
+    }
 
     return (
         <>
@@ -28,10 +34,10 @@ const SimpleProduct = ({ data }) => {
 
             <div className="col-lg-4 rtl-text">
                 <div className="product-right">
-                    <h3>£{data.price.toFixed(2)} </h3>
+                    <h3>£{data.price.toFixed(2)}</h3>
 
                     <div className="product-description border-product">
-                        <Stock productId={data.sku} variants={[]} />
+                        <Stock productId={data.sku} variants={[]} onStockQtyChange={handleStockQtyChange} />
 
                         <h6 className="product-title">quantity</h6>
 
@@ -44,7 +50,7 @@ const SimpleProduct = ({ data }) => {
                                 </span>
                                 <input type="text" name="quantity" value={qty} onChange={setQty} className="form-control input-number" />
                                 <span className="input-group-prepend">
-                                    <button type="button" className="btn quantity-right-plus" onClick={(e) => setQty(qty + 1)} data-type="plus" data-field="">
+                                    <button type="button" className="btn quantity-right-plus" onClick={(e) => setQty(qty + 1 > stockQty ? qty : qty + 1)} data-type="plus" data-field="">
                                         <i className="fa fa-angle-right"></i>
                                     </button>
                                 </span>
@@ -53,7 +59,7 @@ const SimpleProduct = ({ data }) => {
                     </div>
 
                     <div className="product-buttons">
-                        <SnipcartButton data={data} qty={qty} />
+                        <SnipcartButton disabled={stockQty === 0} data={data} qty={qty} />
                     </div>
 
                     <div className="product-buttons">

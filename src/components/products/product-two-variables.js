@@ -11,6 +11,7 @@ const ProductTwoVariables = ({ data }) => {
     const [selectedVariationTwo, setSelectedVariationTwo] = useState(initialVariationTwo)
 
     const [qty, setQty] = useState(1)
+    const [stockQty, setStockQty] = useState(0)
 
     const variationOneOptions = data.variations[0].options.map((variant) => {
         return {
@@ -25,6 +26,11 @@ const ProductTwoVariables = ({ data }) => {
             label: variant.value
         }
     })
+
+    const handleStockQtyChange = (stockQty) => {
+        // new stock level has been retrieved from the Stock component
+        setStockQty(stockQty)
+    }
 
     return (
         <>
@@ -59,7 +65,8 @@ const ProductTwoVariables = ({ data }) => {
 
                     <div className="product-description border-product">
                         <Stock productId={data.sku} 
-                            variants={[{'name': data.variations[0].name, 'option': selectedVariationOne}, {'name': data.variations[1].name, 'option': selectedVariationTwo}]} 
+                               variants={[{'name': data.variations[0].name, 'option': selectedVariationOne}, {'name': data.variations[1].name, 'option': selectedVariationTwo}]} 
+                               onStockQtyChange={handleStockQtyChange}
                         />
 
                         <h6 className="product-title">quantity</h6>
@@ -72,7 +79,7 @@ const ProductTwoVariables = ({ data }) => {
                                 </span>
                                 <input type="text" name="quantity" value={qty} onChange={setQty} className="form-control input-number" />
                                 <span className="input-group-prepend">
-                                    <button type="button" className="btn quantity-right-plus" onClick={(e) => setQty(qty + 1)} data-type="plus" data-field="">
+                                    <button type="button" className="btn quantity-right-plus" onClick={(e) => setQty(qty + 1 > stockQty ? qty : qty + 1)} data-type="plus" data-field="">
                                         <i className="fa fa-angle-right"></i>
                                     </button>
                                 </span>
@@ -81,7 +88,7 @@ const ProductTwoVariables = ({ data }) => {
                     </div>
 
                     <div className="product-buttons">
-                        <SnipcartStatefulButton data={data} selections={[selectedVariationOne, selectedVariationTwo]} qty={qty} />
+                        <SnipcartStatefulButton disabled={stockQty === 0} data={data} selections={[selectedVariationOne, selectedVariationTwo]} qty={qty} />
                     </div>
 
                     <div className="product-buttons">

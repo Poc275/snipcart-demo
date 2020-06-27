@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 
 // Snipcart button component that manages state
-const SnipcartStatefulButton = ({ data, selections, qty }) => {
+const SnipcartStatefulButton = ({ disabled, data, selections, qty }) => {
 
     // set snipcart custom values (product variations)
     // this hook updates whenever the selections props gets updated 
@@ -26,6 +26,7 @@ const SnipcartStatefulButton = ({ data, selections, qty }) => {
     return (
         <button id={data.sku}
                 className="snipcart-add-item btn btn-solid"
+                disabled={disabled}
                 data-item-id={data.sku}
                 data-item-url={process.env.BASE_URL + "product/" + data.id}
                 data-item-price={data.price}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-const Stock = ({ productId, variants }) => {
+const Stock = ({ productId, variants, onStockQtyChange }) => {
     // state for Snipcart API response
     const [stockData, setStockData] = useState({})
 
@@ -83,8 +83,13 @@ const Stock = ({ productId, variants }) => {
             if(variants.length > 0) {
                 const variation = findStockForVariableProducts()
                 setStock(variation.stock)
+                // call parent product with updated qty
+                onStockQtyChange(variation.stock)
             } else {
-                setStock(findStockForSimpleProducts())
+                const stock = findStockForSimpleProducts()
+                setStock(stock)
+                // call parent product with updated qty
+                onStockQtyChange(stock)
             }
         }
     }
