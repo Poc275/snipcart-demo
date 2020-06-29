@@ -40,6 +40,8 @@ const Stock = ({ productId, variants, onStockQtyChange }) => {
     const findStockForVariableProducts = () => {
         let matchedVariation = null
 
+        // loop through Snipcart variations and find a match with the 
+        // selected variations made on the product page
         stockData.variants.forEach((snipcartVariant) => {
             const variationMatches = snipcartVariant.variation.map((snipcartVariation) => {
                 const matches = variants.map((selectedVariation) => {
@@ -54,6 +56,8 @@ const Stock = ({ productId, variants, onStockQtyChange }) => {
                     return null
                 })
 
+                // a match will be on either name or option, can't be both
+                // so it is a successful match if the array includes true
                 return matches.includes(true) ? true : false
             })
 

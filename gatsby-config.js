@@ -18,7 +18,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `http://localhost:1337`,
+        apiURL: `https://dgh-warehouse-strapi.azurewebsites.net`,
         contentTypes: [
           'product',
           'shop'
