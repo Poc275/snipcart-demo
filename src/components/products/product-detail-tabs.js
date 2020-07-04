@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.scss';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
+import 'react-tabs/style/react-tabs.scss'
+import ReactMarkdown from 'react-markdown'
 
 class ProductDetailTabs extends Component {
     render() {
@@ -73,7 +74,7 @@ class ProductDetailTabs extends Component {
                             </TabPanel>
 
                             <TabPanel>
-                                <p className="mt-4 p-0">{product.description}</p>
+                                <ReactMarkdown className="mt-4 p-0" source={product.description} />
                             </TabPanel>
 
                             <TabPanel>
