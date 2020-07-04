@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import SnipcartStatefulButton from './snipcart-stateful-button'
+import SnipcartButton from './snipcart-button'
 import Select from 'react-select'
 import Stock from './stock'
 
@@ -76,7 +76,7 @@ const ProductOneVariable = ({ data }) => {
                     </div>
 
                     <div className="product-buttons">
-                        <SnipcartStatefulButton disabled={stockQty === 0} data={data} selections={[selectedVariationOne]} qty={qty} />
+                        <SnipcartButton disabled={stockQty === 0} data={data} selections={[selectedVariationOne]} qty={qty} />
                     </div>
 
                     <div className="product-buttons">

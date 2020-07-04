@@ -59,7 +59,7 @@ const SimpleProduct = ({ data }) => {
                     </div>
 
                     <div className="product-buttons">
-                        <SnipcartButton disabled={stockQty === 0} data={data} qty={qty} />
+                        <SnipcartButton disabled={stockQty === 0} data={data} selections={[]} qty={qty} />
                     </div>
 
                     <div className="product-buttons">
