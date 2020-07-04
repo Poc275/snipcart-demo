@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import SnipcartButton from './snipcart-button'
 import Stock from './stock'
+import ReactMarkdown from 'react-markdown'
 
 const SimpleProduct = ({ data }) => {
     const [qty, setQty] = useState(1)
@@ -20,7 +21,7 @@ const SimpleProduct = ({ data }) => {
 
                         <div className="border-product">
                             <h6 className="product-title">product details</h6>
-                            <p>{data.description}</p>
+                            <ReactMarkdown source={data.description} />
 
                             <h6 className="product-title mt-3">materials</h6>
                             <p>{data.primary_material} 

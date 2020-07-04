@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import SnipcartButton from './snipcart-button'
 import Select from 'react-select'
 import Stock from './stock'
+import ReactMarkdown from 'react-markdown'
 
 const ProductTwoVariables = ({ data }) => {
     const initialVariationOne = data.variations[0].options[0].value
@@ -41,7 +42,7 @@ const ProductTwoVariables = ({ data }) => {
 
                         <div className="border-product">
                             <h6 className="product-title">product details</h6>
-                            <p>{data.description}</p>
+                            <ReactMarkdown source={data.description} />
 
                             <h6 className="product-title mt-3">materials</h6>
                             <p>{data.primary_material} 
