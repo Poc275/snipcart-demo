@@ -17,7 +17,7 @@ class Instagram extends Component {
         });
 
         const users = instagram.media()
-        users.then(res => this.setState({InstaData:res.data}))
+        users.then(res => this.setState({InstaData:res.data})).catch(e => console.log(e))
     }
 
     render() {
