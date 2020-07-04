@@ -21,7 +21,7 @@ const SnipcartStatefulButton = ({ disabled, data, selections, qty }) => {
                     data-item-url={process.env.BASE_URL + "product/" + data.id}
                     data-item-price={data.price}
                     data-item-name={data.title}
-                    data-item-description={data.description}
+                    data-item-description={data.summary}
                     data-item-image={data.image.childImageSharp.fixed.src}
                     data-item-quantity={qty}>
                 Add to cart
@@ -36,7 +36,7 @@ const SnipcartStatefulButton = ({ disabled, data, selections, qty }) => {
                     data-item-url={process.env.BASE_URL + "product/" + data.id}
                     data-item-price={data.price}
                     data-item-name={data.title}
-                    data-item-description={data.description}
+                    data-item-description={data.summary}
                     data-item-image={data.image.childImageSharp.fixed.src}
                     data-item-quantity={qty}
                     data-item-custom1-name={data.variations[0].name}
@@ -55,7 +55,7 @@ const SnipcartStatefulButton = ({ disabled, data, selections, qty }) => {
                     data-item-url={process.env.BASE_URL + "product/" + data.id}
                     data-item-price={data.price}
                     data-item-name={data.title}
-                    data-item-description={data.description}
+                    data-item-description={data.summary}
                     data-item-image={data.image.childImageSharp.fixed.src}
                     data-item-quantity={qty}
                     data-item-custom1-name={data.variations[0].name}
