@@ -19,7 +19,9 @@ class Filter extends Component {
             priceRange: {
                 min: 0,
                 max: maxPrice
-            }
+            },
+            minPrice: 0,
+            maxPrice: maxPrice
         }
     }
 
@@ -139,8 +141,8 @@ class Filter extends Component {
                                 <div className="collection-brand-filter">
                                     <div className="custom-control custom-checkbox collection-filter-checkbox">
                                         <InputRange
-                                            minValue={this.state.priceRange.minPrice}
-                                            maxValue={this.state.priceRange.maxPrice}
+                                            minValue={this.state.minPrice}
+                                            maxValue={this.state.maxPrice}
                                             value={this.state.priceRange}
                                             onChange={value => this.clickPriceRange(value)}
                                         />
