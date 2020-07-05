@@ -1,0 +1,197 @@
+.example {
+    margin: 20px;
+}
+
+.simple-border {
+    border: 1px solid black;
+}
+
+.simple-thicker-border {
+    border: 3px solid black;
+}
+
+.dashed-border {
+    border: 3px dashed black;
+}
+
+.double-border {
+    border: thick double #D4AF37;
+}
+
+.ridge-border {
+    border: 4mm ridge #D4AF37;
+}
+
+.inset-border {
+    border: 0.5rem inset #D4AF37;
+}
+
+.outset-border {
+    border: 0.5rem outset #D4AF37;
+}
+
+.radius-border {
+    border: 0.5rem outset #D4AF37;
+    border-radius: 12px;
+}
+
+.groove-border {
+    border: 1rem groove #D4AF37;
+}
+
+.spaced-border {
+    border: 1rem groove #D4AF37;
+}
+
+.spaced-border img {
+    padding: 20px;
+}
+
+.double-colour-border {
+    position: relative;
+    border: 5px solid black;
+}
+
+.double-colour-border:before {
+    position: absolute;
+    display: block;
+    content: '';
+    border: 5px solid #D4AF37;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.double-colour-border img {
+    padding: 20px;
+}
+
+.double-colour-spaced-border {
+    position: relative;
+    border: 2px solid black;
+}
+
+.double-colour-spaced-border:before {
+    position: absolute;
+    display: block;
+    content: '';
+    border: 2px solid #D4AF37;
+    height: 98%;
+    width: 98%;
+    top: 1%;
+    left: 1%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.double-colour-spaced-border img {
+    padding: 20px;
+}
+
+.sided-border {
+    border-left: 3px solid blue;
+    border-right: 3px solid #D4AF37;
+    border-top: 3px solid black;
+    border-bottom: 3px solid red;
+}
+
+.sided-border img {
+    padding: 20px;
+}
+
+.border-gradient {
+    border: 5px solid;
+    border-image: linear-gradient(#D4AF37, #000) 30;
+}
+
+.border-gradient img {
+    padding: 20px;
+}
+
+.clipped-example {
+    /* outside */
+    margin: 20px;
+    position: relative;
+	width: 300px;
+	height: 300px;
+	background: #D4AF37;
+	-webkit-clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+    clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+}
+
+.clipped-example-inside {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: white;
+    -webkit-clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+    clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+}
+
+.border-image-example {
+    margin: 20px;
+    width: 350px;
+    border: 25px solid #D4AF37;
+    border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='75' height='75'%3E%3Cg fill='none' stroke='%23B88846' stroke-width='2'%3E%3Cpath d='M1 1h73v73H1z'/%3E%3Cpath d='M8 8h59v59H8z'/%3E%3Cpath d='M8 8h16v16H8zM51 8h16v16H51zM51 51h16v16H51zM8 51h16v16H8z'/%3E%3C/g%3E%3Cg fill='%23B88846'%3E%3Ccircle cx='16' cy='16' r='2'/%3E%3Ccircle cx='59' cy='16' r='2'/%3E%3Ccircle cx='59' cy='59' r='2'/%3E%3Ccircle cx='16' cy='59' r='2'/%3E%3C/g%3E%3C/svg%3E") 25;
+}
+
+.border-image-example img {
+    padding: 20px;
+}
+
+.animated-border-example {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+    background: #1D1F20;
+    position: relative;
+    border-radius: 5px;
+}
+
+.animated-border-example:after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    height: calc(100% + 10px);
+    width: calc(100% + 10px);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    border-radius: 10px;
+    z-index: -1;
+    -webkit-animation: animatedgradient 3s ease alternate infinite;
+            animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+}
+
+@-webkit-keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+    }
+}
