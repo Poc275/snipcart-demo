@@ -120,9 +120,9 @@ class Footer extends Component {
                                         <ul className="contact-list">
                                             <li><i className="fa fa-map-marker"></i>Heanor, Derbyshire DE75 7DR, UK</li>
                                             <li><i className="fa fa-phone"></i>123-456-7898</li>
-                                            <li><i className="fa fa-envelope-o"></i>
+                                            {/* <li><i className="fa fa-envelope-o"></i>
                                                 <a href="mailto:support@james-shop.co.uk">support@james-shop.co.uk</a>
-                                            </li>
+                                            </li> */}
                                             <li><i className="fa fa-clock-o"></i>Monday to Friday 9AM - 4.30PM</li>
                                         </ul>
                                     </div>
