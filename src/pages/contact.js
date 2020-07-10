@@ -3,8 +3,16 @@ import SEO from "../components/seo"
 import Breadcrumb from "../components/breadcrumb"
 import Layout from "../components/layout"
 import './index.scss'
+import ContactForm from '../components/contact-form'
 
 class Contact extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+
+        }
+    }
+
     render (){
         return (
             <Layout>
@@ -45,63 +53,52 @@ class Contact extends Component {
                                                 <p>United Kingdom</p>
                                             </div>
                                         </li>
-                                        <li>
-                                            <div className="contact-icon">
-                                                <img src={`${process.env.BASE_URL}/assets/images/icon/email.png`} alt="email icon" />
-                                                <h6>Email</h6>
-                                            </div>
-                                            <div className="media-body">
-                                                <p><a href="mailto:support@james-shop.co.uk">support@james-shop.co.uk</a></p>
-                                            </div>
-                                        </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-sm-12">
-                                <form className="theme-form">
+
+                                <ContactForm />
+
+                                {/* <form className="theme-form">
                                     <div className="form-row">
                                         <div className="col-md-6">
                                             <label htmlFor="name">First Name</label>
-                                            <input type="text" className="form-control" id="name"
-                                                   placeholder="Enter Your name" required="" />
+                                            <input type="text" className="form-control" id="name" placeholder="Enter Your name" required />
                                         </div>
                                         <div className="col-md-6">
                                             <label htmlFor="email">Last Name</label>
-                                            <input type="text" className="form-control" id="last-name"
-                                                   placeholder="Email" required="" />
+                                            <input type="text" className="form-control" id="last-name" placeholder="Email" required />
                                         </div>
                                         <div className="col-md-6">
                                             <label htmlFor="review">Phone number</label>
-                                            <input type="text" className="form-control" id="review"
-                                                   placeholder="Enter your number" required="" />
+                                            <input type="text" className="form-control" id="review" placeholder="Enter your number" />
                                         </div>
                                         <div className="col-md-6">
                                             <label htmlFor="email">Email</label>
-                                            <input type="text" className="form-control" id="email" placeholder="Email"
-                                                   required="" />
+                                            <input type="text" className="form-control" id="email" placeholder="Email" required />
                                         </div>
                                         <div className="col-md-12">
                                             <label htmlFor="subject">Subject</label>
                                             <select className="form-control" id="subject">
                                                 <option value="returns">Returns</option>
-                                                <option value="order">Order Status</option>
-                                                <option value="product">Product Enquiry</option>
                                                 <option value="enquiry">General Enquiry</option>
+                                                <option value="enquiry">Complaint</option>
                                             </select>
                                             <br />
                                         </div>
                                         <div className="col-md-12">
                                             <label htmlFor="review">Write Your Message</label>
-                                            <textarea className="form-control" placeholder="Write Your Message"
-                                                      id="exampleFormControlTextarea1" rows="6"></textarea>
+                                            <textarea className="form-control" placeholder="Write Your Message" id="exampleFormControlTextarea1" rows="6"></textarea>
                                         </div>
                                         <div className="col-md-12">
                                             <button className="btn btn-solid" type="submit">Send Your Message</button>
                                         </div>
                                     </div>
-                                </form>
+                                </form> */}
+
                             </div>
                         </div>
                     </div>
