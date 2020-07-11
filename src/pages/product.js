@@ -41,8 +41,27 @@ class ProductPage extends Component {
         //     focusOnSelect: true
         // }
 
-        const holzkernStyleNav = {
+        // const holzkernStyleNav = {
+        //     dots: true,
+        //     infinite: true,
+        //     speed: 500,
+        //     slidesToShow: 3,
+        //     slidesToScroll: 1
+        // }
+
+        const customPagingSettings = {
+            className: "center",
+            centerMode: true,
+            centerPadding: "0px",
+            customPaging: function(i) {
+                return (
+                    <a>
+                        <img src={product.product_gallery[i].image.childImageSharp.fluid.src} />
+                    </a>
+                )
+            },
             dots: true,
+            dotsClass: "slick-dots slick-thumb",
             infinite: true,
             speed: 500,
             slidesToShow: 3,
@@ -76,7 +95,7 @@ class ProductPage extends Component {
 
                                 <div className="row">
                                     <div className="col">
-                                        <Slider {...holzkernStyleNav} className="product-slick">
+                                        <Slider {...customPagingSettings} className="product-slick" ref={slider => (this.slider = slider)}>
                                             {product.product_gallery.map((vari, index) =>
                                                 <div key={index}>
                                                     {/* <ImageZoom image={vari.image.childImageSharp.fixed.src} className="img-fluid image_zoom_cls-0" /> */}
@@ -95,7 +114,7 @@ class ProductPage extends Component {
                     <section className="tab-product m-0">
                         <div className="container">
                             <div className="row mt-5">
-                                <Product data={product} />
+                                <Product data={product} sliderRef={this.slider} />
                             </div>
                         </div>
                     </section>
@@ -153,7 +172,9 @@ export const query = graphql`
                         options {
                             description
                             value
+                            galleryIndex
                         }
+                        displayable
                     }
                     category
                     dimensions
@@ -163,6 +184,9 @@ export const query = graphql`
                             childImageSharp {
                                 fixed(height: 460) {
                                     ...GatsbyImageSharpFixed
+                                }
+                                fluid(maxWidth: 60) {
+                                    ...GatsbyImageSharpFluid
                                 }
                             }
                         }

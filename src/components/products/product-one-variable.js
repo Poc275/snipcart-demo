@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import SnipcartButton from './snipcart-button'
-import Select from 'react-select'
+// import Select from 'react-select'
 import Stock from './stock'
 import ReactMarkdown from 'react-markdown'
+import TextVariation from './text-variation'
+import ImageVariation from './image-variation'
 
-const ProductOneVariable = ({ data }) => {
+const ProductOneVariable = ({ data, sliderRef }) => {
     const initialVariationOne = data.variations[0].options[0].value
     const [selectedVariationOne, setSelectedVariationOne] = useState(initialVariationOne)
 
@@ -41,8 +43,20 @@ const ProductOneVariable = ({ data }) => {
                             </p>
                         </div>
 
-                        <h6 className="product-title size-text">select {data.variations[0].name}</h6>
-                        <Select defaultValue={variationOneOptions[0]} options={variationOneOptions} onChange={(e) => setSelectedVariationOne(e.value)} />
+                        {
+                            data.variations[0].displayable ? 
+                                <ImageVariation 
+                                    variations={data.variations[0]} 
+                                    gallery={data.product_gallery} 
+                                    sliderRef={sliderRef} 
+                                    snipcartSelectionFunc={setSelectedVariationOne} 
+                                />
+                                : 
+                                <TextVariation 
+                                    variations={data.variations[0]} 
+                                    snipcartSelectionFunc={setSelectedVariationOne}
+                                />
+                        }
                     </div>
                 </div>
             </div>

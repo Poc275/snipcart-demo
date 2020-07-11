@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import SnipcartButton from './snipcart-button'
-import Select from 'react-select'
+// import Select from 'react-select'
 import Stock from './stock'
 import ReactMarkdown from 'react-markdown'
+import ImageVariation from './image-variation'
+import TextVariation from './text-variation'
 
-const ProductTwoVariables = ({ data }) => {
+const ProductTwoVariables = ({ data, sliderRef }) => {
     const initialVariationOne = data.variations[0].options[0].value
     const [selectedVariationOne, setSelectedVariationOne] = useState(initialVariationOne)
 
@@ -41,7 +43,7 @@ const ProductTwoVariables = ({ data }) => {
                         <h2>{data.title}</h2>
 
                         <div className="border-product">
-                            <h6 className="product-title">product details</h6>
+                            <h6 className="product-title">product summary</h6>
                             <ReactMarkdown source={data.description} />
 
                             <h6 className="product-title mt-3">materials</h6>
@@ -51,11 +53,34 @@ const ProductTwoVariables = ({ data }) => {
                             </p>
                         </div>
 
-                        <h6 className="product-title size-text">select {data.variations[0].name}</h6>
-                        <Select defaultValue={variationOneOptions[0]} options={variationOneOptions} onChange={(e) => setSelectedVariationOne(e.value)} />
-
-                        <h6 className="product-title size-text mt-3">select {data.variations[1].name}</h6>
-                        <Select defaultValue={variationTwoOptions[0]} options={variationTwoOptions} onChange={(e) => setSelectedVariationTwo(e.value)} />
+                        {
+                            data.variations[0].displayable ? 
+                                <ImageVariation 
+                                    variations={data.variations[0]} 
+                                    gallery={data.product_gallery} 
+                                    sliderRef={sliderRef} 
+                                    snipcartSelectionFunc={setSelectedVariationOne} 
+                                />
+                                : 
+                                <TextVariation 
+                                    variations={data.variations[0]} 
+                                    snipcartSelectionFunc={setSelectedVariationOne}
+                                />
+                        }
+                        {
+                            data.variations[1].displayable ? 
+                                <ImageVariation 
+                                    variations={data.variations[1]} 
+                                    gallery={data.product_gallery} 
+                                    sliderRef={sliderRef} 
+                                    snipcartSelectionFunc={setSelectedVariationTwo} 
+                                />
+                                : 
+                                <TextVariation 
+                                    variations={data.variations[1]} 
+                                    snipcartSelectionFunc={setSelectedVariationTwo}
+                                />
+                        }
                     </div>
                 </div>
             </div>
