@@ -34,3 +34,25 @@
 #ts-and-cs-information h3 {
     color: #000;
 }
+
+// snipcart overrides to prevent dark theme clashing
+.snipcart-cart-header {
+    background-color: rgb(240, 245, 246)!important;
+}
+
+#snipcart h1 {
+    color: rgb(152, 155, 163);
+}
+
+#snipcart h2,
+#snipcart h3,
+#snipcart p,
+#snipcart a,
+#snipcart li,
+#snipcart select {
+    color: rgb(49, 51, 50)!important;
+}
+
+#snipcart select option {
+    background-color: rgba(0, 0, 0, 0);
+}
