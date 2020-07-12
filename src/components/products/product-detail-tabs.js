@@ -14,7 +14,7 @@ class ProductDetailTabs extends Component {
                         <Tabs className="tab-content nav-material">
                             <TabList className="nav nav-tabs nav-material">
                                 <Tab className="nav-item">
-                                    <span className="nav-link active">
+                                    <span className="nav-link">
                                         <i className="icofont icofont-ui-home"></i>Details</span>
                                     <div className="material-border"></div>
                                 </Tab>
