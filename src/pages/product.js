@@ -74,7 +74,7 @@ class ProductPage extends Component {
                 <Layout>
                     <SEO title={product.title} />
 
-                    <Breadcrumb title={product.title} />
+                    <Breadcrumb title={product.title} parent='collection' />
 
                     <section>
                         <div className="collection-wrapper">
