@@ -119,7 +119,7 @@ const MainHomePage = () => (
                     <div className="col-md-4 service-block">
                         <div className="media">
                             {/* <div dangerouslySetInnerHTML={{ __html: svgFreeShipping }} /> */}
-                            <img src={`${process.env.BASE_URL}/assets/images/icon/globe-free-img.png`} alt="free shipping logo" className="img-fluid" style={{ width: "75px" }} />
+                            <img src={`${process.env.BASE_URL}/assets/images/icon/globe-free-img-white.png`} alt="free shipping logo" className="img-fluid" style={{ width: "75px" }} />
                             <div className="media-body ml-2">
                                 <h4>free shipping</h4>
                                 <p>free shipping world wide</p>
@@ -129,7 +129,7 @@ const MainHomePage = () => (
                     <div className="col-md-4 service-block">
                         <div className="media">
                             {/* <div dangerouslySetInnerHTML={{ __html: svgservice }} /> */}
-                            <img src={`${process.env.BASE_URL}/assets/images/icon/quality-free-img.png`} alt="quality control logo" className="img-fluid" style={{ width: "75px" }} />
+                            <img src={`${process.env.BASE_URL}/assets/images/icon/quality-free-img-white.png`} alt="quality control logo" className="img-fluid" style={{ width: "75px" }} />
                             <div className="media-body ml-2">
                                 <h4>Best Quality</h4>
                                 <p>All of our products have been tested by our staff</p>
@@ -139,7 +139,7 @@ const MainHomePage = () => (
                     <div className="col-md-4 service-block">
                         <div className="media">
                             {/* <div dangerouslySetInnerHTML={{ __html: svgoffer }} /> */}
-                            <img src={`${process.env.BASE_URL}/assets/images/icon/lock-free-img.png`} alt="secure payments logo" className="img-fluid" style={{ width: "75px" }} />
+                            <img src={`${process.env.BASE_URL}/assets/images/icon/lock-free-img-white.png`} alt="secure payments logo" className="img-fluid" style={{ width: "75px" }} />
                             <div className="media-body ml-2">
                                 <h4>Secure Payments</h4>
                                 <p>Secure payment gateway provided by Snipcart</p>
