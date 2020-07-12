@@ -32,6 +32,9 @@ function SEO({ description, lang, meta, title }) {
       htmlAttributes={{
         lang,
       }}
+      bodyAttributes={{
+        class: 'dark'
+      }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
@@ -71,7 +74,7 @@ function SEO({ description, lang, meta, title }) {
     >
       <link rel="preconnect" href="https://app.snipcart.com" />
       <link rel="preconnect" href="https://cdn.snipcart.com" />
-      <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.15/default/snipcart.css" />
+      <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.17/default/snipcart.css" />
     </Helmet>
   )
 }
