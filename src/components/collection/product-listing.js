@@ -25,11 +25,17 @@ class ProductListing extends Component {
     }
 
     componentDidUpdate(prevProps) {
-        // update the limit to the current number of filtered products
+        // update hasMoreItems when filtered products changes
         if(prevProps.products.length !== this.props.products.length) {
-            this.setState({
-                limit: this.props.products.length
-            })
+            if(this.state.limit >= this.props.products.length) {
+                this.setState({
+                    hasMoreItems: false
+                })
+            } else {
+                this.setState({
+                    hasMoreItems: true
+                })
+            }
         }
     }
 
