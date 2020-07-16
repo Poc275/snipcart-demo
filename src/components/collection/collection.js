@@ -38,7 +38,7 @@ class Collection extends Component {
         }, () => this.filterProducts())
     }
 
-    filterByTag = (tags) => {
+    filterByTag = (tags) => {        
         this.setState({
             tagFilters: tags
         }, () => this.filterProducts())
@@ -59,11 +59,15 @@ class Collection extends Component {
             let endPriceMatch = true
 
             if(this.state.categoryFilters.length > 0) {
-                categoryMatch = this.state.categoryFilters.includes(product.node.category)
+                categoryMatch = this.state.categoryFilters.includes(product.node.product_category?.category)
             }
 
             if(this.state.tagFilters.length > 0) {
-                tagMatch = this.state.tagFilters.includes(product.node.tags)
+                const tagMatches = product.node.product_tags.map((product_tag) => {
+                    return this.state.tagFilters.includes(product_tag.tag)
+                })
+
+                tagMatch = tagMatches.reduce((acc, curr) => acc | curr)
             }
 
             if(this.state.priceFilter) {

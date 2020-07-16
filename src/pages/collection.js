@@ -41,9 +41,7 @@ export const pageQuery = graphql`
             value
           }
         }
-        category
         dimensions
-        tags
         product_gallery {
           image {
             childImageSharp {
@@ -52,6 +50,12 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+        product_category {
+          category
+        }
+        product_tags {
+          tag
         }
       }
     }

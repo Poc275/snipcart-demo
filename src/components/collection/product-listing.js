@@ -24,6 +24,15 @@ class ProductListing extends Component {
         });
     }
 
+    componentDidUpdate(prevProps) {
+        // update the limit to the current number of filtered products
+        if(prevProps.products.length !== this.props.products.length) {
+            this.setState({
+                limit: this.props.products.length
+            })
+        }
+    }
+
     render() {
         return (
             <div>

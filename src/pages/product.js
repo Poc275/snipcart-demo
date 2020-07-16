@@ -176,9 +176,7 @@ export const query = graphql`
                         }
                         displayable
                     }
-                    category
                     dimensions
-                    tags
                     product_gallery {
                         image {
                             childImageSharp {
@@ -194,6 +192,12 @@ export const query = graphql`
                     primary_material
                     secondary_material
                     tertiary_material
+                    product_category {
+                        category
+                    }
+                    product_tags {
+                        tag
+                    }
                 }
             }
         }

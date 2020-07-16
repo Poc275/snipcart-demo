@@ -21,7 +21,9 @@ class Filter extends Component {
                 max: maxPrice
             },
             minPrice: 0,
-            maxPrice: maxPrice
+            maxPrice: maxPrice,
+            filteredCategories: [],
+            filteredTags: []
         }
     }
 
@@ -29,28 +31,32 @@ class Filter extends Component {
         document.querySelector(".collection-filter").style = "left: -365px";
     }
 
-    clickCategoryHandle(event, categories) {
-        const index = categories.indexOf(event.target.value)
-
+    clickCategoryHandle(event) {
         if(event.target.checked) {
-            categories.push(event.target.value)
+            this.setState({
+                filteredCategories: [...this.state.filteredCategories, event.target.value]
+            }, () => this.props.categoryFilter(this.state.filteredCategories))
         } else {
-            categories.splice(index, 1)
+            this.setState({
+                filteredCategories: this.state.filteredCategories.filter((category) => {
+                    return category !== event.target.value
+                })
+            }, () => this.props.categoryFilter(this.state.filteredCategories))
         }
-
-        this.props.categoryFilter(categories)
     }
 
     clickTagHandle(event, tags) {
-        const index = tags.indexOf(event.target.value)
-
         if(event.target.checked) {
-            tags.push(event.target.value)
+            this.setState({
+                filteredTags: [...this.state.filteredTags, event.target.value]
+            }, () => this.props.tagFilter(this.state.filteredTags))
         } else {
-            tags.splice(index, 1)
+            this.setState({
+                filteredTags: this.state.filteredTags.filter((tag) => {
+                    return tag !== event.target.value
+                })
+            }, () => this.props.tagFilter(this.state.filteredTags))
         }
-
-        this.props.tagFilter(tags)
     }
 
     clickPriceRange(range) {
@@ -60,20 +66,25 @@ class Filter extends Component {
     }
 
     render() {
-        const filteredCategories = []
-        const filteredTags = []
+        // const filteredCategories = []
+        // const filteredTags = []
 
         const categories = []
         this.props.products.forEach((product) => {
-            if(categories.indexOf(product.node.category) === -1) {
-                categories.push(product.node.category)
+            if(product.node.product_category?.category) {
+                if(categories.indexOf(product.node.product_category?.category) === -1) {
+                    categories.push(product.node.product_category.category)
+                }
             }
         })
+
         const tags = []
         this.props.products.forEach((product) => {
-            if(tags.indexOf(product.node.tags) === -1) {
-                tags.push(product.node.tags)
-            }
+            product.node.product_tags.forEach((product_tag) => {
+                if(tags.indexOf(product_tag.tag) === -1) {
+                    tags.push(product_tag.tag)
+                }
+            })
         })
 
         return (
@@ -95,8 +106,8 @@ class Filter extends Component {
                                         categories.map((category, index) => {
                                             return (
                                                 <div className="custom-control custom-checkbox collection-filter-checkbox" key={index}>
-                                                    <input type="checkbox" onClick={(e) => this.clickCategoryHandle(e, filteredCategories)} value={category} 
-                                                        defaultChecked={filteredCategories.includes(category) ? true : false} className="custom-control-input" id={category} />
+                                                    <input type="checkbox" onClick={(e) => this.clickCategoryHandle(e)} value={category} 
+                                                        defaultChecked={this.state.filteredCategories.includes(category) ? true : false} className="custom-control-input" id={category} />
                                                     <label className="custom-control-label" htmlFor={category}>{category}</label>
                                                 </div>
                                             )
@@ -119,8 +130,8 @@ class Filter extends Component {
                                         tags.map((tag, index) => {
                                             return (
                                                 <div className="custom-control custom-checkbox collection-filter-checkbox" key={index}>
-                                                    <input type="checkbox" onClick={(e) => this.clickTagHandle(e, filteredTags)} value={tag} 
-                                                        defaultChecked={filteredTags.includes(tag) ? true : false} className="custom-control-input" id={tag} />
+                                                    <input type="checkbox" onClick={(e) => this.clickTagHandle(e)} value={tag} 
+                                                        defaultChecked={this.state.filteredTags.includes(tag) ? true : false} className="custom-control-input" id={tag} />
                                                     <label className="custom-control-label" htmlFor={tag}>{tag}</label>
                                                 </div>
                                             )

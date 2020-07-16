@@ -21,7 +21,9 @@ module.exports = {
         apiURL: `https://dgh-warehouse-strapi.azurewebsites.net`,
         contentTypes: [
           'product',
-          'shop'
+          'shop',
+          'category',
+          'tags'
         ],
         queryLimit: 1000,
       },

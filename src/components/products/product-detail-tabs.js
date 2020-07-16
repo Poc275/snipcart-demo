@@ -43,11 +43,11 @@ class ProductDetailTabs extends Component {
                                         </tr>
                                         <tr>
                                             <th>Categories</th>
-                                            <td>{product.category}</td>
+                                            <td>{product.product_category?.category ? product.product_category.category : ''}</td>
                                         </tr>
                                         <tr>
                                             <th>Tags</th>
-                                            <td>{product.tags}</td>
+                                            <td>{product.product_tags.map(tag => tag.tag).join(' | ')}</td>
                                         </tr>
                                         <tr>
                                             <th>Weight</th>
