@@ -4,11 +4,11 @@ import Slider from 'react-slick'
 import TopCollection from "./top-collection"
 import Instagram from "./instagram"
 import NewsTicker from "./news-ticker"
-import {
-    svgFreeShipping,
-    svgservice,
-    svgoffer
-} from "../services/svgs"
+// import {
+//     svgFreeShipping,
+//     svgservice,
+//     svgoffer
+// } from "../services/svgs"
 
 const MainHomePage = () => (
     <div>
@@ -60,7 +60,7 @@ const MainHomePage = () => (
             <div className="container">
                 <div className="row partition2">
                     <div className="col-md-6">
-                        <Link to={`/collection`}>
+                        <Link to={`/clothing`}>
                             <div className="collection-banner p-right text-center">
                                 <img src={`${process.env.BASE_URL}/assets/images/sub-banner.jpg`} className="img-fluid" alt=""/>
                                     <div className="contain-banner">
@@ -73,7 +73,7 @@ const MainHomePage = () => (
                         </Link>
                     </div>
                     <div className="col-md-6">
-                        <Link to={`/collection`}>
+                        <Link to={`/accessories`}>
                             <div className="collection-banner p-right text-center">
                                 <img src={`${process.env.BASE_URL}/assets/images/sub-banner3.jpg`} className="img-fluid" alt=""/>
                                     <div className="contain-banner">
