@@ -4,6 +4,7 @@ import StickyBox from "react-sticky-box"
 import Filter from "./filter"
 import ProductListing from "./product-listing"
 import FilterBar from "./filter-bar"
+import { sortProducts } from "../../services/functions"
 
 class Collection extends Component {
 
@@ -90,55 +91,7 @@ class Collection extends Component {
     }
 
     filterSort = (value) => {
-        const sortedProducts = this.state.visibleProducts
-        switch(value) {
-            case "HighToLow":
-                sortedProducts.sort((a, b) => {
-                    return b.node.price - a.node.price
-                })
-                break
-            
-            case "LowToHigh":
-                sortedProducts.sort((a, b) => {
-                    return a.node.price - b.node.price
-                })
-                break
-
-            case "AscOrder":
-                sortedProducts.sort((a, b) => {
-                    const nameA = a.node.title.toUpperCase()
-                    const nameB = b.node.title.toUpperCase()
-                    if(nameA < nameB) {
-                        return -1
-                    }
-                    if(nameA > nameB) {
-                        return 1
-                    }
-                    return 0
-                })
-                break
-
-            case "DescOrder":
-                sortedProducts.sort((a, b) => {
-                    const nameA = a.node.title.toUpperCase()
-                    const nameB = b.node.title.toUpperCase()
-                    if(nameB < nameA) {
-                        return -1
-                    }
-                    if(nameB > nameA) {
-                        return 1
-                    }
-                    return 0
-                })
-                break
-
-            // case "Newest":
-            //     // TODO
-            //     break
-
-            default:
-                break
-        }
+        const sortedProducts = sortProducts(value, this.state.visibleProducts)
 
         this.setState({
             visibleProducts: sortedProducts

@@ -104,3 +104,62 @@ export const SlideUpDown = function(classnames) {
         el.style = "display: none";
     });
 }
+
+// sort products function, returns array of products sorted by the 
+// condition specified by value which can be one of:
+// Price: High to low,
+// Price: Low to High,
+// Name: Ascending order,
+// Name: Descending order
+export const sortProducts = (value, products) => {
+    switch(value) {
+        case "HighToLow":
+            products.sort((a, b) => {
+                return b.node.price - a.node.price
+            })
+            break
+        
+        case "LowToHigh":
+            products.sort((a, b) => {
+                return a.node.price - b.node.price
+            })
+            break
+
+        case "AscOrder":
+            products.sort((a, b) => {
+                const nameA = a.node.title.toUpperCase()
+                const nameB = b.node.title.toUpperCase()
+                if(nameA < nameB) {
+                    return -1
+                }
+                if(nameA > nameB) {
+                    return 1
+                }
+                return 0
+            })
+            break
+
+        case "DescOrder":
+            products.sort((a, b) => {
+                const nameA = a.node.title.toUpperCase()
+                const nameB = b.node.title.toUpperCase()
+                if(nameB < nameA) {
+                    return -1
+                }
+                if(nameB > nameA) {
+                    return 1
+                }
+                return 0
+            })
+            break
+
+        // case "Newest":
+        //     // TODO
+        //     break
+
+        default:
+            break
+    }
+
+    return products
+}
