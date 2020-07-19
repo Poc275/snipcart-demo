@@ -69,7 +69,7 @@ class ProductThumbnail extends Component {
                         </Link>
                     </div>
 
-                    <div className="cart-info cart-wrap">
+                    {/* <div className="cart-info cart-wrap"> */}
                         {/* <button title="Add to cart" onClick={onAddToCartClicked}>
                             <i className="fa fa-shopping-cart" aria-hidden="true"></i>
                         </button> */}
@@ -82,7 +82,7 @@ class ProductThumbnail extends Component {
                             onClick={this.onOpenModal}><i className="fa fa-search" aria-hidden="true"></i></a>
                         <Link to={`${process.env.PUBLIC_URL}/compare`} title="Compare" onClick={onAddToCompareClicked}>
                             <i className="fa fa-refresh" aria-hidden="true"></i></Link> */}
-                    </div>
+                    {/* </div> */}
 
                     {/* {
                         product.variants?
