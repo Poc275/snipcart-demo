@@ -12,7 +12,8 @@ class Collection extends Component {
         visibleProducts: [],
         categoryFilters: [],
         tagFilters: [],
-        priceFilter: null
+        priceFilter: null,
+        refreshProductListing: false
     }
 
     openFilter = () => {
@@ -79,7 +80,12 @@ class Collection extends Component {
         })
 
         this.setState({
-            visibleProducts: filteredProducts
+            visibleProducts: filteredProducts,
+            refreshProductListing: true
+        }, () => {
+            this.setState({
+                refreshProductListing: false
+            })
         })
     }
 
@@ -197,7 +203,7 @@ class Collection extends Component {
                                                         </div>
 
                                                         {/*Products Listing Component*/}
-                                                        <ProductListing colSize={this.state.layoutColumns} products={this.state.visibleProducts} />
+                                                        <ProductListing colSize={this.state.layoutColumns} products={this.state.visibleProducts} refresh={this.state.refreshProductListing} />
                                                     </div>
                                                 </div>
                                             </div>

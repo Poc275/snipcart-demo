@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import ProductThumbnail from "../products/product-thumbnail"
 import InfiniteScroll from 'react-infinite-scroll-component'
 
@@ -15,18 +15,17 @@ class ProductListing extends Component {
 
     fetchMoreItems = () => {
         if (this.state.limit >= this.props.products.length) {
-            this.setState({ hasMoreItems: false });
-            return;
+            this.setState({ hasMoreItems: false })
+            return
         }
 
         this.setState({
             limit: this.state.limit + 5
-        });
+        })
     }
 
     componentDidUpdate(prevProps) {
-        // update hasMoreItems when filtered products changes
-        if(prevProps.products.length !== this.props.products.length) {
+        if(!prevProps.refresh && this.props.refresh) {
             if(this.state.limit >= this.props.products.length) {
                 this.setState({
                     hasMoreItems: false
@@ -35,6 +34,7 @@ class ProductListing extends Component {
                 this.setState({
                     hasMoreItems: true
                 })
+                this.fetchMoreItems()
             }
         }
     }
