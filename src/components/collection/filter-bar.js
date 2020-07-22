@@ -50,11 +50,19 @@ class FilterBar extends Component {
 
                 <div className="collection-view">
                     <ul>
-                        <li><i
-                            className="fa fa-th grid-layout-view" onClick={this.gridLayout}></i>
+                        <li>
+                            <i className="fa fa-th grid-layout-view" 
+                               onClick={this.gridLayout} 
+                               onKeyPress={this.gridLayout}
+                               role="button"
+                               tabIndex={0}></i>
                         </li>
-                        <li><i
-                            className="fa fa-list-ul list-layout-view" onClick={this.listLayout}></i>
+                        <li>
+                            <i className="fa fa-list-ul list-layout-view" 
+                               onClick={this.listLayout}
+                               onKeyPress={this.listLayout}
+                               role="button"
+                               tabIndex={0}></i>
                         </li>
                     </ul>
                 </div>
@@ -62,28 +70,24 @@ class FilterBar extends Component {
                 <div className="collection-grid-view">
                     <ul>
                         <li>
-                            <img
-                                src={`${process.env.BASE_URL}/assets/images/icon/2.png`}
-                                alt=""
-                                className="product-2-layout-view" onClick={() => this.LayoutView(6)} />
+                            <button onClick={() => this.LayoutView(6)} style={{"border": "none", "backgroundColor": "transparent", "padding": "0"}}>
+                                <img src={`${process.env.BASE_URL}/assets/images/icon/2.png`} alt="" className="product-2-layout-view" />
+                            </button>
                         </li>
                         <li>
-                            <img
-                                src={`${process.env.BASE_URL}/assets/images/icon/3.png`}
-                                alt=""
-                                className="product-3-layout-view" onClick={() => this.LayoutView(4)} />
+                            <button onClick={() => this.LayoutView(4)} style={{"border": "none", "backgroundColor": "transparent", "padding": "0"}}>
+                                <img src={`${process.env.BASE_URL}/assets/images/icon/3.png`} alt="" className="product-3-layout-view" />
+                            </button>
                         </li>
                         <li>
-                            <img
-                                src={`${process.env.BASE_URL}/assets/images/icon/4.png`}
-                                alt=""
-                                className="product-4-layout-view" onClick={() => this.LayoutView(3)} />
+                            <button onClick={() => this.LayoutView(3)} style={{"border": "none", "backgroundColor": "transparent", "padding": "0"}}>
+                                <img src={`${process.env.BASE_URL}/assets/images/icon/4.png`} alt="" className="product-4-layout-view" />
+                            </button>
                         </li>
                         <li>
-                            <img
-                                src={`${process.env.BASE_URL}/assets/images/icon/6.png`}
-                                alt=""
-                                className="product-6-layout-view" onClick={() => this.LayoutView(2)} />
+                            <button onClick={() => this.LayoutView(2)} style={{"border": "none", "backgroundColor": "transparent", "padding": "0"}}>
+                                <img src={`${process.env.BASE_URL}/assets/images/icon/6.png`} alt="" className="product-6-layout-view" />
+                            </button>
                         </li>
                     </ul>
                 </div>
