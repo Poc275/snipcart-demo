@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import SnipcartButton from './snipcart-button'
-// import Select from 'react-select'
 import Stock from './stock'
 import ReactMarkdown from 'react-markdown'
 import TextVariation from './text-variation'
@@ -12,13 +11,6 @@ const ProductOneVariable = ({ data, sliderRef }) => {
 
     const [qty, setQty] = useState(1)
     const [stockQty, setStockQty] = useState(0)
-
-    const variationOneOptions = data.variations[0].options.map((variant) => {
-        return {
-            value: variant.value,
-            label: variant.value
-        }
-    })
 
     const handleStockQtyChange = (stockQty) => {
         // new stock level has been retrieved from the Stock component
