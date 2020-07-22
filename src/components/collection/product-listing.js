@@ -67,7 +67,7 @@ class ProductListing extends Component {
                             :
                             <div className="row">
                                 <div className="col-sm-12 text-center section-b-space mt-5 no-found" >
-                                    <img src={`${process.env.BASE_URL}/assets/images/empty-search.jpg`} className="img-fluid mb-4" />
+                                    <img src={`${process.env.BASE_URL}/assets/images/empty-search.jpg`} className="img-fluid mb-4" alt="no products were found" />
                                     <h3>Sorry! Couldn't find the product you were looking for</h3>
                                     <p>Please check if you have misspelt something or try different filters</p>
                                     {/* <Link to={`/collection`} className="btn btn-solid">continue shopping</Link> */}
