@@ -91,13 +91,13 @@ class NavBar extends Component {
                                 </ul> */}
                             </li>
                             <li>
-                                <Link to="#" className="nav-link">
+                                <Link to="/" className="nav-link">
                                     {'shop'}
                                     <span className="sub-arrow"></span>
                                 </Link>
                                 <ul className="nav-submenu">
-                                    <li><Link to={`clothing`} >{'clothing'}</Link></li>
-                                    <li><Link to={`accessories`} >{'accessories'}</Link></li>
+                                    <li><Link to={`/clothing`}>{'clothing'}</Link></li>
+                                    <li><Link to={`/accessories`}>{'accessories'}</Link></li>
                                 </ul>
                             </li>
                             <li>
