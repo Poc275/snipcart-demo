@@ -29,7 +29,7 @@ const Stock = ({ productId, variants, onStockQtyChange }) => {
         (error) => {
             console.log("Error fetching stock data:", error)
         })
-    }, [])
+    }, [productId])
 
     // update stock when data is ready or variants change
     useEffect(() => {
