@@ -141,6 +141,9 @@ class Collection extends Component {
                                                                     <div className="col-xl-12">
                                                                         <div className="filter-main-btn">
                                                                             <span onClick={this.openFilter}
+                                                                                onKeyPress={this.openFilter}
+                                                                                role="button"
+                                                                                tabIndex={0}
                                                                                 className="filter-btn btn btn-theme"><i
                                                                                 className="fa fa-filter"
                                                                                 aria-hidden="true"></i> Filter</span>
