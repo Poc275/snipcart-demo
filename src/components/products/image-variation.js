@@ -12,12 +12,15 @@ const ImageVariation = ({ variations, gallery, sliderRef, snipcartSelectionFunc 
     }
 
     const variationItems = variations.options.map((variation, idx) => (
-        <li key={variation.value}
-            className={idx === selectedVariation ? 'variation selected' : 'variation'}
-            title={variation.description === "" ? variation.value : variation.description}
-            onClick={(e) => selectVariation(variation.galleryIndex, idx)}>
-                <img src={gallery[variation.galleryIndex].image.childImageSharp.fluid.src} />
-        </li>
+        <div key={variation.value}
+             role="menuitem"
+             tabIndex={idx}
+             className={idx === selectedVariation ? 'variation selected' : 'variation'}
+             title={variation.description === "" ? variation.value : variation.description}
+             onClick={(e) => selectVariation(variation.galleryIndex, idx)}
+             onKeyPress={(e) => selectVariation(variation.galleryIndex, idx)}>
+                <img src={gallery[variation.galleryIndex].image.childImageSharp.fluid.src} alt={variation.value} />
+        </div>
     ))
 
     return (
@@ -25,7 +28,7 @@ const ImageVariation = ({ variations, gallery, sliderRef, snipcartSelectionFunc 
             <h6 className="product-title size-text">
                 select {variations.name}: <span className="selected-title">{variations.options[selectedVariation].value}</span>
             </h6>
-            <ul>{variationItems}</ul>
+            <div role="menu">{variationItems}</div>
         </>
     )
 }
