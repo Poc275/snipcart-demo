@@ -55,9 +55,7 @@ class ProductPage extends Component {
             centerPadding: "0px",
             customPaging: function(i) {
                 return (
-                    <a>
-                        <img src={product.product_gallery[i].image.childImageSharp.fluid.src} />
-                    </a>
+                    <img src={product.product_gallery[i].image.childImageSharp.fluid.src} alt="product gallery slider paging icon" />
                 )
             },
             dots: true,

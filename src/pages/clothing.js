@@ -52,9 +52,7 @@ class Clothing extends Component {
                                             <div className="row">
                                                 <div className="col-sm-12">
                                                     <div className="top-banner-wrapper">
-                                                        <a href="#">
-                                                            <img src={`${process.env.BASE_URL}/assets/images/mega-menu/collection-banner.jpg`} className="img-fluid" alt="summer collection now in" />
-                                                        </a>
+                                                        <img src={`${process.env.BASE_URL}/assets/images/mega-menu/collection-banner.jpg`} className="img-fluid" alt="summer collection now in" />
                                                         <div className="top-banner-content small-section">
                                                             <h4>clothing by james</h4>
                                                             {/* <h5>View our clothing range below</h5> */}
