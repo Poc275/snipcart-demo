@@ -11,12 +11,15 @@ const TextVariation = ({ variations, snipcartSelectionFunc }) => {
     }
 
     const variationItems = variations.options.map((variation, idx) => (
-        <li key={variation.value}
-            className={idx === selectedVariation ? 'text-variation selected' : 'text-variation'}
-            title={variation.value}
-            onClick={(e) => selectVariation(idx)}>
+        <div key={variation.value}
+             role="menuitem"
+             tabIndex={idx}
+             className={idx === selectedVariation ? 'text-variation selected' : 'text-variation'}
+             title={variation.value}
+             onClick={(e) => selectVariation(idx)}
+             onKeyPress={(e) => selectVariation(idx)}>
                 {variation.value}
-        </li>
+        </div>
     ))
 
     return (
@@ -24,7 +27,7 @@ const TextVariation = ({ variations, snipcartSelectionFunc }) => {
             <h6 className="product-title size-text">
                 select {variations.name}: <span className="selected-title">{variations.options[selectedVariation].value}</span>
             </h6>
-            <ul>{variationItems}</ul>
+            <div role="menu">{variationItems}</div>
         </>
     )
 }

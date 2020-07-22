@@ -23,4 +23,10 @@
     margin-right: 12px;
     margin-bottom: 12px;
     padding: 6px 12px;
+    display: inline-block;
+}
+
+// prevent tabIndex adding an outline
+.text-variation:focus {
+    outline: none;
 }
