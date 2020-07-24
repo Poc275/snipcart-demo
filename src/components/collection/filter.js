@@ -90,7 +90,7 @@ class Filter extends Component {
         return (
             <div className="collection-filter-block">
                 <div className="collection-mobile-back">
-                    <span className="filter-back" onClick={(e) => this.closeFilter(e)} >
+                    <span className="filter-back" onClick={(e) => this.closeFilter(e)} onKeyPress={(e) => this.closeFilter(e)} role="button" tabIndex={0} >
                         <i className="fa fa-angle-left" aria-hidden="true"></i> back
                     </span>
                 </div>
@@ -99,7 +99,9 @@ class Filter extends Component {
                 <SlideToggle>
                     {({onToggle, setCollapsibleElement}) => (
                         <div className="collection-collapse-block">
-                            <h3 className="collapse-block-title" onClick={onToggle}>filter by category</h3>
+                            <div onClick={onToggle} onKeyPress={onToggle} role="button" tabIndex={0}>
+                                <h3 className="collapse-block-title">filter by category</h3>
+                            </div>
                             <div className="collection-collapse-block-content" ref={setCollapsibleElement}>
                                 <div className="collection-brand-filter">
                                     {
@@ -123,7 +125,9 @@ class Filter extends Component {
                 <SlideToggle>
                     {({onToggle, setCollapsibleElement}) => (
                         <div className="collection-collapse-block">
-                            <h3 className="collapse-block-title" onClick={onToggle}>filter by tag</h3>
+                            <div onClick={onToggle} onKeyPress={onToggle} role="button" tabIndex={0}>
+                                <h3 className="collapse-block-title">filter by tag</h3>
+                            </div>
                             <div className="collection-collapse-block-content" ref={setCollapsibleElement}>
                                 <div className="collection-brand-filter">
                                     {
@@ -147,7 +151,9 @@ class Filter extends Component {
                 <SlideToggle>
                     {({onToggle, setCollapsibleElement}) => (
                         <div className="collection-collapse-block open">
-                            <h3 className="collapse-block-title" onClick={onToggle}>filter by price</h3>
+                            <div onClick={onToggle} onKeyPress={onToggle} role="button" tabIndex={0}>
+                                <h3 className="collapse-block-title">filter by price</h3>
+                            </div>
                             <div className="collection-collapse-block-content block-price-content" ref={setCollapsibleElement}>
                                 <div className="collection-brand-filter">
                                     <div className="custom-control custom-checkbox collection-filter-checkbox">

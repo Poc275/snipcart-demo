@@ -56,3 +56,8 @@
 #snipcart select option {
     background-color: rgba(0, 0, 0, 0);
 }
+
+// remove outline from collection filter divs with tab indexes
+.collection-filter-block div {
+    outline: none;
+}
