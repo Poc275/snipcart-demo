@@ -57,7 +57,9 @@
     background-color: rgba(0, 0, 0, 0);
 }
 
-// remove outline from collection filter divs with tab indexes
-.collection-filter-block div {
+// prevent tabIndexes setting an outline
+.collection-filter-block div,
+.icon-nav div,
+.closebtn {
     outline: none;
 }

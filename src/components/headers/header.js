@@ -37,8 +37,10 @@ class Header extends Component {
                       <div className="icon-nav">
                         <ul>
                           <li className="onhover-div mobile-search">
-                            <div><img src={`${process.env.BASE_URL}/assets/images/icon/search.png`} onClick={this.openSearch} className="img-fluid" alt="" />
-                              <i className="fa fa-search" onClick={this.openSearch}></i></div>
+                            <div role="button" onClick={this.openSearch} onKeyPress={this.openSearch} tabIndex={0}>
+                              <img src={`${process.env.BASE_URL}/assets/images/icon/search.png`} className="img-fluid" alt="" />
+                              {/* <i className="fa fa-search" onClick={this.openSearch}></i> */}
+                            </div>
                           </li>
                           {/* <li className="onhover-div mobile-setting">
                             <div>
@@ -76,7 +78,7 @@ class Header extends Component {
         {/* Search overlay */}
         <div id="search-overlay" className="search-overlay">
             <div>
-                <span className="closebtn" onClick={this.closeSearch} title="Close Overlay">×</span>
+                <span role="button" className="closebtn" onClick={this.closeSearch} onKeyPress={this.closeSearch} tabIndex={0}>×</span>
                 <div className="overlay-content">
                     <div className="container">
                         <div className="row">
