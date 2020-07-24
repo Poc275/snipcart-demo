@@ -60,6 +60,8 @@
 // prevent tabIndexes setting an outline
 .collection-filter-block div,
 .icon-nav div,
-.closebtn {
+.closebtn,
+.toggle-nav,
+.mobile-back.text-right {
     outline: none;
 }

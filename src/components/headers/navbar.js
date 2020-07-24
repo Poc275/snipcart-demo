@@ -67,13 +67,13 @@ class NavBar extends Component {
             <div>
                 <div className="main-navbar">
                     <div id="mainnav" >
-                        <div className="toggle-nav" onClick={this.openNav.bind(this)} >
+                        <div role="button" className="toggle-nav" onClick={this.openNav.bind(this)} onKeyPress={this.openNav.bind(this)} tabIndex={0}>
                             <i className="fa fa-bars sidebar-bar"></i>
                         </div>
                         <ul className="nav-menu" style={this.state.navClose}>
-                            <li className="back-btn" onClick={this.closeNav.bind(this)} >
-                                <div className="mobile-back text-right">
-                                    <span >Back</span>
+                            <li className="back-btn">
+                                <div role="button" className="mobile-back text-right" onClick={this.closeNav.bind(this)} onKeyPress={this.closeNav.bind(this)} tabIndex={0}>
+                                    <span>Back</span>
                                     <i className="fa fa-angle-right pl-2" aria-hidden="true"></i>
                                 </div>
                             </li>
