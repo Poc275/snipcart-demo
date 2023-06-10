@@ -7,7 +7,7 @@
   "dependencies": {
     "fetch-instagram": "^1.0.0-alpha.3",
     "formik": "^2.1.4",
-    "gatsby": "^2.20.25",
+    "gatsby": "^4.25.7",
     "gatsby-image": "^2.3.4",
     "gatsby-plugin-manifest": "^2.3.5",
     "gatsby-plugin-offline": "^3.1.4",
